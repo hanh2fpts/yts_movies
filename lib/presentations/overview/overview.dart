@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:yts_movies/utils/color_constant.dart';
+import 'package:yts_movies/utils/text_style_constant.dart';
+
+class OverView extends StatefulWidget {
+  const OverView({super.key});
+
+  @override
+  State<OverView> createState() => _OverViewState();
+}
+
+class _OverViewState extends State<OverView> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text(
+          'YTS Movies',
+          style: TextStyle(fontSize: TextStyleContant.titleLarge),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.bookmark,
+                size: TextStyleContant.iconSize,
+                color: ColorConstant.flexSchemeDark.primary),
+            onPressed: () {},
+          )
+        ],
+      ),
+    );
+  }
+}
