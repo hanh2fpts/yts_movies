@@ -1,6 +1,15 @@
 part of 'home_cubit.dart';
 
 @immutable
-abstract class HomeState {}
+class HomeState extends Equatable {
+  final int index;
 
-class HomeInitial extends HomeState {}
+  const HomeState({required this.index});
+
+  @override
+  List<Object?> get props => [index];
+}
+
+class InitDataState extends HomeState {
+  const InitDataState({required super.index});
+}
