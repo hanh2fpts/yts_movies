@@ -1,6 +1,5 @@
 part of 'home_cubit.dart';
 
-@immutable
 class HomeState extends Equatable {
   final int index;
 
