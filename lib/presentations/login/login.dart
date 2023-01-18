@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -11,6 +10,12 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('test'),
+        ),
+        body: const Center(
+          child: Text('Test'),
+        ));
   }
 }
