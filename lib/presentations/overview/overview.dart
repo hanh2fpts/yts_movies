@@ -13,9 +13,7 @@ class _OverViewState extends State<OverView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
         title: const Text(
           'YTS Movies',
           style: TextStyle(fontSize: TextStyleContant.titleLarge),
@@ -29,6 +27,7 @@ class _OverViewState extends State<OverView> {
           )
         ],
       ),
+      body: Container(),
     );
   }
 }
