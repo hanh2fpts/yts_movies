@@ -12,7 +12,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('test'),
+          title: const Text('test'),
         ),
         body: const Center(
           child: Text('Test'),
