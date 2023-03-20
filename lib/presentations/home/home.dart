@@ -33,6 +33,7 @@ class _HomeState extends State<Home> {
         children: pages,
       ),
       bottomNavigationBar: ConvexAppBar(
+        disableDefaultTabController: true,
         backgroundColor: ColorConstant.flexSchemeDark.background,
         style: TabStyle.react,
         onTap: (index) {
