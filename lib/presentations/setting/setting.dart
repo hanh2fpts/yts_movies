@@ -5,6 +5,22 @@ class Setting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Setting Page'));
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(children: [
+          Image.asset(
+            'assets/images/background.png',
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
+            alignment: Alignment.center,
+          ),
+          Column(children: const [
+            Text('Xin chào, Chúc bạn một ngày tốt lành!',
+                style: TextStyle(fontSize: 30, color: Colors.white))
+          ]),
+        ]),
+      ),
+    );
   }
 }
