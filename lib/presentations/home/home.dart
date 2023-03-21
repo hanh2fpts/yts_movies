@@ -36,18 +36,20 @@ class _HomeState extends State<Home> {
         index: selectedTab,
         children: pages,
       ),
-      bottomNavigationBar: ConvexAppBar(
-        disableDefaultTabController: true,
-        backgroundColor: ColorConstant.flexSchemeDark.background,
-        style: TabStyle.react,
+      bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           context.read<HomeCubit>().selectPage(index);
         },
+        currentIndex: selectedTab,
+        showUnselectedLabels: true,
+        selectedIconTheme: const IconThemeData(color: ColorConstant.ytsColor, size: 30),
+        unselectedIconTheme: const IconThemeData(color: Colors.white),
+        type: BottomNavigationBarType.fixed,
         items: const [
-          TabItem(icon: Icon(Icons.home, color: Colors.white)),
-          TabItem(icon: Icon(Icons.search_sharp, color: Colors.white)),
-          TabItem(icon: Icon(Icons.favorite, color: Colors.white)),
-          TabItem(icon: Icon(Icons.settings, color: Colors.white)),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.search_sharp), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
         ],
       ),
     );
