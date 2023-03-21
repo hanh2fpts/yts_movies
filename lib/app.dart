@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.chakraPetch().fontFamily,
         ),
         themeMode: ThemeMode.system,
-        initialRoute: '/',
         home: Builder(
           builder: (context) {
             return RouteRegister.routes[Home.routeName]!;

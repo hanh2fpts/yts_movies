@@ -1,4 +1,3 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yts_movies/bloc/home/home_cubit.dart';
@@ -31,7 +30,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final selectedTab = context.select((HomeCubit cubit) => cubit.state.index);
     return Scaffold(
-      backgroundColor: ColorConstant.flexSchemeDark.background,
       body: LazyIndexedStack(
         index: selectedTab,
         children: pages,
@@ -41,15 +39,56 @@ class _HomeState extends State<Home> {
           context.read<HomeCubit>().selectPage(index);
         },
         currentIndex: selectedTab,
-        showUnselectedLabels: true,
-        selectedIconTheme: const IconThemeData(color: ColorConstant.ytsColor, size: 30),
-        unselectedIconTheme: const IconThemeData(color: Colors.white),
         type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.search_sharp), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
+        items: [
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.home),
+              label: '',
+              activeIcon: Container(
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: ColorConstant.flexSchemeDark.primary,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Icon(Icons.home,
+                      size: 30,
+                      color: ColorConstant.flexSchemeDark.primaryContainer))),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.search_sharp),
+              label: '',
+              activeIcon: Container(
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: ColorConstant.flexSchemeDark.primary,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Icon(Icons.search_sharp,
+                      size: 30,
+                      color: ColorConstant.flexSchemeDark.primaryContainer))),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.favorite),
+              label: '',
+              activeIcon: Container(
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: ColorConstant.flexSchemeDark.primary,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Icon(Icons.favorite,
+                      size: 30,
+                      color: ColorConstant.flexSchemeDark.primaryContainer))),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.settings),
+              label: '',
+              activeIcon: Container(
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: ColorConstant.flexSchemeDark.primary,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Icon(Icons.settings,
+                      size: 30,
+                      color: ColorConstant.flexSchemeDark.primaryContainer))),
         ],
       ),
     );
