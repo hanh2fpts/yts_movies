@@ -1,4 +1,4 @@
-class TextStyleContant {
+class TextStyleConstant {
   static const double titleLarge = 22;
   static const double titleMedium = 16;
   static const double titleSmall = 14;

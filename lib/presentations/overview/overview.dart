@@ -16,12 +16,12 @@ class _OverViewState extends State<OverView> {
       appBar: AppBar(
         title: const Text(
           'YTS Movies',
-          style: TextStyle(fontSize: TextStyleContant.titleLarge),
+          style: TextStyle(fontSize: TextStyleConstant.titleLarge),
         ),
         actions: [
           IconButton(
             icon: Icon(Icons.bookmark,
-                size: TextStyleContant.iconSize,
+                size: TextStyleConstant.iconSize,
                 color: ColorConstant.flexSchemeDark.primary),
             onPressed: () {},
           )

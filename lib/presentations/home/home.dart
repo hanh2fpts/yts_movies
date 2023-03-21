@@ -6,10 +6,13 @@ import 'package:yts_movies/presentations/favorite/favorite.dart';
 import 'package:yts_movies/presentations/overview/overview.dart';
 import 'package:yts_movies/presentations/search/search.dart';
 import 'package:yts_movies/presentations/setting/setting.dart';
+import 'package:yts_movies/presentations/widget/custom_lazy_indexstacked.dart';
 import 'package:yts_movies/utils/color_constant.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
+
+  static const String routeName = 'Home';
 
   @override
   State<Home> createState() => _HomeState();
@@ -23,12 +26,13 @@ class _HomeState extends State<Home> {
     const Favorite(),
     const Setting(),
   ];
+
   @override
   Widget build(BuildContext context) {
     final selectedTab = context.select((HomeCubit cubit) => cubit.state.index);
     return Scaffold(
       backgroundColor: ColorConstant.flexSchemeDark.background,
-      body: IndexedStack(
+      body: LazyIndexedStack(
         index: selectedTab,
         children: pages,
       ),

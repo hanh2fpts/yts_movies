@@ -32,4 +32,5 @@ class ColorConstant {
     inversePrimary: Color(0xff765151),
     surfaceTint: Color(0xffef9a9a),
   );
+  static const Color ytsColor = Color(0xff5DA93C);
 }
