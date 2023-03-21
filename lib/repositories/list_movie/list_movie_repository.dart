@@ -12,9 +12,14 @@ class ListMovieRepository extends ListMovieRepositoryType {
   final RequestProviderType _requestProvider = getIt<RequestProviderType>();
   final String _controller = UrlConstants.listMovie;
   @override
-  Future<List<Movie>> getListMovie() async {
-    var params = Queue<RequestParameter>();
-    var response = await _requestProvider.getAsync<List<Movie>>(_controller, params);
+  Future<List<MovieEntity>?> getListMovie() async {
+    try {
+      var params = Queue<RequestParameter>();
+      var response = await _requestProvider.getAsync<List<MovieEntity>>(_controller, params);
+      return response.data;
+    } catch (e) {
+      print(e);
+    }
     return [];
   }
 }

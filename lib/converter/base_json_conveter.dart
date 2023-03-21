@@ -7,9 +7,7 @@ class BaseJsonConverter {
     try {
       if (response.data is List) {
         var list = response.data as List;
-        var dataList = List<T>.from(list
-            .map((item) => (responseType as ResponseDto?)?.decodeJson(item))
-            .toList()) as T;
+        var dataList = List<T>.from(list.map((item) => (responseType as ResponseDto?)?.decodeJson(item)).toList()) as T;
         return dataList;
       } else {
         return (responseType as ResponseDto).decodeJson(response.data) as T;

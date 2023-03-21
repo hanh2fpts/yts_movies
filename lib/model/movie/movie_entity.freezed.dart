@@ -20,10 +20,58 @@ MovieEntity _$MovieEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieEntity {
-  Stat? get status => throw _privateConstructorUsedError;
-  String? get statusMessage => throw _privateConstructorUsedError;
-  Data? get data => throw _privateConstructorUsedError;
-  Meta? get meta => throw _privateConstructorUsedError;
+  @JsonKey(name: 'id')
+  int? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'url')
+  String? get url => throw _privateConstructorUsedError;
+  @JsonKey(name: 'imdb_code')
+  String? get imdbCode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'title')
+  String? get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'title_english')
+  String? get titleEnglish => throw _privateConstructorUsedError;
+  @JsonKey(name: 'title_long')
+  String? get titleLong => throw _privateConstructorUsedError;
+  @JsonKey(name: 'slug')
+  String? get slug => throw _privateConstructorUsedError;
+  @JsonKey(name: 'year')
+  int? get year => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rating')
+  double? get rating => throw _privateConstructorUsedError;
+  @JsonKey(name: 'runtime')
+  int? get runtime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'genres')
+  List<String>? get genres => throw _privateConstructorUsedError;
+  @JsonKey(name: 'summary')
+  String? get summary => throw _privateConstructorUsedError;
+  @JsonKey(name: 'description_full')
+  String? get descriptionFull => throw _privateConstructorUsedError;
+  @JsonKey(name: 'synopsis')
+  String? get synopsis => throw _privateConstructorUsedError;
+  @JsonKey(name: 'yt_trailer_code')
+  String? get ytTrailerCode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'language')
+  String? get language => throw _privateConstructorUsedError;
+  @JsonKey(name: 'mpa_rating')
+  String? get mpaRating => throw _privateConstructorUsedError;
+  @JsonKey(name: 'background_image')
+  String? get backgroundImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'background_image_original')
+  String? get backgroundImageOriginal => throw _privateConstructorUsedError;
+  @JsonKey(name: 'small_cover_image')
+  String? get smallCoverImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'medium_cover_image')
+  String? get mediumCoverImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'large_cover_image')
+  String? get largeCoverImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'state')
+  String? get state => throw _privateConstructorUsedError;
+  @JsonKey(name: 'torrents')
+  List<Torrent>? get torrents => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_uploaded')
+  DateTime? get dateUploaded => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_uploaded_unix')
+  int? get dateUploadedUnix => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,474 +85,65 @@ abstract class $MovieEntityCopyWith<$Res> {
           MovieEntity value, $Res Function(MovieEntity) then) =
       _$MovieEntityCopyWithImpl<$Res, MovieEntity>;
   @useResult
-  $Res call({Stat? status, String? statusMessage, Data? data, Meta? meta});
-
-  $DataCopyWith<$Res>? get data;
-  $MetaCopyWith<$Res>? get meta;
+  $Res call(
+      {@JsonKey(name: 'id')
+          int? id,
+      @JsonKey(name: 'url')
+          String? url,
+      @JsonKey(name: 'imdb_code')
+          String? imdbCode,
+      @JsonKey(name: 'title')
+          String? title,
+      @JsonKey(name: 'title_english')
+          String? titleEnglish,
+      @JsonKey(name: 'title_long')
+          String? titleLong,
+      @JsonKey(name: 'slug')
+          String? slug,
+      @JsonKey(name: 'year')
+          int? year,
+      @JsonKey(name: 'rating')
+          double? rating,
+      @JsonKey(name: 'runtime')
+          int? runtime,
+      @JsonKey(name: 'genres')
+          List<String>? genres,
+      @JsonKey(name: 'summary')
+          String? summary,
+      @JsonKey(name: 'description_full')
+          String? descriptionFull,
+      @JsonKey(name: 'synopsis')
+          String? synopsis,
+      @JsonKey(name: 'yt_trailer_code')
+          String? ytTrailerCode,
+      @JsonKey(name: 'language')
+          String? language,
+      @JsonKey(name: 'mpa_rating')
+          String? mpaRating,
+      @JsonKey(name: 'background_image')
+          String? backgroundImage,
+      @JsonKey(name: 'background_image_original')
+          String? backgroundImageOriginal,
+      @JsonKey(name: 'small_cover_image')
+          String? smallCoverImage,
+      @JsonKey(name: 'medium_cover_image')
+          String? mediumCoverImage,
+      @JsonKey(name: 'large_cover_image')
+          String? largeCoverImage,
+      @JsonKey(name: 'state')
+          String? state,
+      @JsonKey(name: 'torrents')
+          List<Torrent>? torrents,
+      @JsonKey(name: 'date_uploaded')
+          DateTime? dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix')
+          int? dateUploadedUnix});
 }
 
 /// @nodoc
 class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
     implements $MovieEntityCopyWith<$Res> {
   _$MovieEntityCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = freezed,
-    Object? statusMessage = freezed,
-    Object? data = freezed,
-    Object? meta = freezed,
-  }) {
-    return _then(_value.copyWith(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Stat?,
-      statusMessage: freezed == statusMessage
-          ? _value.statusMessage
-          : statusMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Data?,
-      meta: freezed == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as Meta?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DataCopyWith<$Res>? get data {
-    if (_value.data == null) {
-      return null;
-    }
-
-    return $DataCopyWith<$Res>(_value.data!, (value) {
-      return _then(_value.copyWith(data: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $MetaCopyWith<$Res>? get meta {
-    if (_value.meta == null) {
-      return null;
-    }
-
-    return $MetaCopyWith<$Res>(_value.meta!, (value) {
-      return _then(_value.copyWith(meta: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_MovieEntityCopyWith<$Res>
-    implements $MovieEntityCopyWith<$Res> {
-  factory _$$_MovieEntityCopyWith(
-          _$_MovieEntity value, $Res Function(_$_MovieEntity) then) =
-      __$$_MovieEntityCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({Stat? status, String? statusMessage, Data? data, Meta? meta});
-
-  @override
-  $DataCopyWith<$Res>? get data;
-  @override
-  $MetaCopyWith<$Res>? get meta;
-}
-
-/// @nodoc
-class __$$_MovieEntityCopyWithImpl<$Res>
-    extends _$MovieEntityCopyWithImpl<$Res, _$_MovieEntity>
-    implements _$$_MovieEntityCopyWith<$Res> {
-  __$$_MovieEntityCopyWithImpl(
-      _$_MovieEntity _value, $Res Function(_$_MovieEntity) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = freezed,
-    Object? statusMessage = freezed,
-    Object? data = freezed,
-    Object? meta = freezed,
-  }) {
-    return _then(_$_MovieEntity(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Stat?,
-      statusMessage: freezed == statusMessage
-          ? _value.statusMessage
-          : statusMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Data?,
-      meta: freezed == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as Meta?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_MovieEntity implements _MovieEntity {
-  const _$_MovieEntity({this.status, this.statusMessage, this.data, this.meta});
-
-  factory _$_MovieEntity.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieEntityFromJson(json);
-
-  @override
-  final Stat? status;
-  @override
-  final String? statusMessage;
-  @override
-  final Data? data;
-  @override
-  final Meta? meta;
-
-  @override
-  String toString() {
-    return 'MovieEntity(status: $status, statusMessage: $statusMessage, data: $data, meta: $meta)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_MovieEntity &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.statusMessage, statusMessage) ||
-                other.statusMessage == statusMessage) &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.meta, meta) || other.meta == meta));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, status, statusMessage, data, meta);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
-      __$$_MovieEntityCopyWithImpl<_$_MovieEntity>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MovieEntityToJson(
-      this,
-    );
-  }
-}
-
-abstract class _MovieEntity implements MovieEntity {
-  const factory _MovieEntity(
-      {final Stat? status,
-      final String? statusMessage,
-      final Data? data,
-      final Meta? meta}) = _$_MovieEntity;
-
-  factory _MovieEntity.fromJson(Map<String, dynamic> json) =
-      _$_MovieEntity.fromJson;
-
-  @override
-  Stat? get status;
-  @override
-  String? get statusMessage;
-  @override
-  Data? get data;
-  @override
-  Meta? get meta;
-  @override
-  @JsonKey(ignore: true)
-  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Data _$DataFromJson(Map<String, dynamic> json) {
-  return _Data.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Data {
-  int? get movieCount => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  int? get pageNumber => throw _privateConstructorUsedError;
-  List<Movie>? get movies => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DataCopyWith<Data> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DataCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res, Data>;
-  @useResult
-  $Res call(
-      {int? movieCount, int? limit, int? pageNumber, List<Movie>? movies});
-}
-
-/// @nodoc
-class _$DataCopyWithImpl<$Res, $Val extends Data>
-    implements $DataCopyWith<$Res> {
-  _$DataCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? movieCount = freezed,
-    Object? limit = freezed,
-    Object? pageNumber = freezed,
-    Object? movies = freezed,
-  }) {
-    return _then(_value.copyWith(
-      movieCount: freezed == movieCount
-          ? _value.movieCount
-          : movieCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pageNumber: freezed == pageNumber
-          ? _value.pageNumber
-          : pageNumber // ignore: cast_nullable_to_non_nullable
-              as int?,
-      movies: freezed == movies
-          ? _value.movies
-          : movies // ignore: cast_nullable_to_non_nullable
-              as List<Movie>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
-  factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
-      __$$_DataCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int? movieCount, int? limit, int? pageNumber, List<Movie>? movies});
-}
-
-/// @nodoc
-class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
-    implements _$$_DataCopyWith<$Res> {
-  __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? movieCount = freezed,
-    Object? limit = freezed,
-    Object? pageNumber = freezed,
-    Object? movies = freezed,
-  }) {
-    return _then(_$_Data(
-      movieCount: freezed == movieCount
-          ? _value.movieCount
-          : movieCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pageNumber: freezed == pageNumber
-          ? _value.pageNumber
-          : pageNumber // ignore: cast_nullable_to_non_nullable
-              as int?,
-      movies: freezed == movies
-          ? _value._movies
-          : movies // ignore: cast_nullable_to_non_nullable
-              as List<Movie>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_Data implements _Data {
-  const _$_Data(
-      {this.movieCount, this.limit, this.pageNumber, final List<Movie>? movies})
-      : _movies = movies;
-
-  factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
-
-  @override
-  final int? movieCount;
-  @override
-  final int? limit;
-  @override
-  final int? pageNumber;
-  final List<Movie>? _movies;
-  @override
-  List<Movie>? get movies {
-    final value = _movies;
-    if (value == null) return null;
-    if (_movies is EqualUnmodifiableListView) return _movies;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  String toString() {
-    return 'Data(movieCount: $movieCount, limit: $limit, pageNumber: $pageNumber, movies: $movies)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Data &&
-            (identical(other.movieCount, movieCount) ||
-                other.movieCount == movieCount) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.pageNumber, pageNumber) ||
-                other.pageNumber == pageNumber) &&
-            const DeepCollectionEquality().equals(other._movies, _movies));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, movieCount, limit, pageNumber,
-      const DeepCollectionEquality().hash(_movies));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_DataCopyWith<_$_Data> get copyWith =>
-      __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_DataToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Data implements Data {
-  const factory _Data(
-      {final int? movieCount,
-      final int? limit,
-      final int? pageNumber,
-      final List<Movie>? movies}) = _$_Data;
-
-  factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
-
-  @override
-  int? get movieCount;
-  @override
-  int? get limit;
-  @override
-  int? get pageNumber;
-  @override
-  List<Movie>? get movies;
-  @override
-  @JsonKey(ignore: true)
-  _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
-}
-
-Movie _$MovieFromJson(Map<String, dynamic> json) {
-  return _Movie.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Movie {
-  int? get id => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-  String? get imdbCode => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  String? get titleEnglish => throw _privateConstructorUsedError;
-  String? get titleLong => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
-  int? get year => throw _privateConstructorUsedError;
-  double? get rating => throw _privateConstructorUsedError;
-  int? get runtime => throw _privateConstructorUsedError;
-  List<String>? get genres => throw _privateConstructorUsedError;
-  String? get summary => throw _privateConstructorUsedError;
-  String? get descriptionFull => throw _privateConstructorUsedError;
-  String? get synopsis => throw _privateConstructorUsedError;
-  String? get ytTrailerCode => throw _privateConstructorUsedError;
-  Language? get language => throw _privateConstructorUsedError;
-  MpaRating? get mpaRating => throw _privateConstructorUsedError;
-  String? get backgroundImage => throw _privateConstructorUsedError;
-  String? get backgroundImageOriginal => throw _privateConstructorUsedError;
-  String? get smallCoverImage => throw _privateConstructorUsedError;
-  String? get mediumCoverImage => throw _privateConstructorUsedError;
-  String? get largeCoverImage => throw _privateConstructorUsedError;
-  Stat? get state => throw _privateConstructorUsedError;
-  List<Torrent>? get torrents => throw _privateConstructorUsedError;
-  DateTime? get dateUploaded => throw _privateConstructorUsedError;
-  int? get dateUploadedUnix => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MovieCopyWith<Movie> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MovieCopyWith<$Res> {
-  factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
-      _$MovieCopyWithImpl<$Res, Movie>;
-  @useResult
-  $Res call(
-      {int? id,
-      String? url,
-      String? imdbCode,
-      String? title,
-      String? titleEnglish,
-      String? titleLong,
-      String? slug,
-      int? year,
-      double? rating,
-      int? runtime,
-      List<String>? genres,
-      String? summary,
-      String? descriptionFull,
-      String? synopsis,
-      String? ytTrailerCode,
-      Language? language,
-      MpaRating? mpaRating,
-      String? backgroundImage,
-      String? backgroundImageOriginal,
-      String? smallCoverImage,
-      String? mediumCoverImage,
-      String? largeCoverImage,
-      Stat? state,
-      List<Torrent>? torrents,
-      DateTime? dateUploaded,
-      int? dateUploadedUnix});
-}
-
-/// @nodoc
-class _$MovieCopyWithImpl<$Res, $Val extends Movie>
-    implements $MovieCopyWith<$Res> {
-  _$MovieCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -605,11 +244,11 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
       language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as Language?,
+              as String?,
       mpaRating: freezed == mpaRating
           ? _value.mpaRating
           : mpaRating // ignore: cast_nullable_to_non_nullable
-              as MpaRating?,
+              as String?,
       backgroundImage: freezed == backgroundImage
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
@@ -633,7 +272,7 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
       state: freezed == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as Stat?,
+              as String?,
       torrents: freezed == torrents
           ? _value.torrents
           : torrents // ignore: cast_nullable_to_non_nullable
@@ -651,44 +290,74 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
 }
 
 /// @nodoc
-abstract class _$$_MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
-  factory _$$_MovieCopyWith(_$_Movie value, $Res Function(_$_Movie) then) =
-      __$$_MovieCopyWithImpl<$Res>;
+abstract class _$$_MovieEntityCopyWith<$Res>
+    implements $MovieEntityCopyWith<$Res> {
+  factory _$$_MovieEntityCopyWith(
+          _$_MovieEntity value, $Res Function(_$_MovieEntity) then) =
+      __$$_MovieEntityCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {int? id,
-      String? url,
-      String? imdbCode,
-      String? title,
-      String? titleEnglish,
-      String? titleLong,
-      String? slug,
-      int? year,
-      double? rating,
-      int? runtime,
-      List<String>? genres,
-      String? summary,
-      String? descriptionFull,
-      String? synopsis,
-      String? ytTrailerCode,
-      Language? language,
-      MpaRating? mpaRating,
-      String? backgroundImage,
-      String? backgroundImageOriginal,
-      String? smallCoverImage,
-      String? mediumCoverImage,
-      String? largeCoverImage,
-      Stat? state,
-      List<Torrent>? torrents,
-      DateTime? dateUploaded,
-      int? dateUploadedUnix});
+      {@JsonKey(name: 'id')
+          int? id,
+      @JsonKey(name: 'url')
+          String? url,
+      @JsonKey(name: 'imdb_code')
+          String? imdbCode,
+      @JsonKey(name: 'title')
+          String? title,
+      @JsonKey(name: 'title_english')
+          String? titleEnglish,
+      @JsonKey(name: 'title_long')
+          String? titleLong,
+      @JsonKey(name: 'slug')
+          String? slug,
+      @JsonKey(name: 'year')
+          int? year,
+      @JsonKey(name: 'rating')
+          double? rating,
+      @JsonKey(name: 'runtime')
+          int? runtime,
+      @JsonKey(name: 'genres')
+          List<String>? genres,
+      @JsonKey(name: 'summary')
+          String? summary,
+      @JsonKey(name: 'description_full')
+          String? descriptionFull,
+      @JsonKey(name: 'synopsis')
+          String? synopsis,
+      @JsonKey(name: 'yt_trailer_code')
+          String? ytTrailerCode,
+      @JsonKey(name: 'language')
+          String? language,
+      @JsonKey(name: 'mpa_rating')
+          String? mpaRating,
+      @JsonKey(name: 'background_image')
+          String? backgroundImage,
+      @JsonKey(name: 'background_image_original')
+          String? backgroundImageOriginal,
+      @JsonKey(name: 'small_cover_image')
+          String? smallCoverImage,
+      @JsonKey(name: 'medium_cover_image')
+          String? mediumCoverImage,
+      @JsonKey(name: 'large_cover_image')
+          String? largeCoverImage,
+      @JsonKey(name: 'state')
+          String? state,
+      @JsonKey(name: 'torrents')
+          List<Torrent>? torrents,
+      @JsonKey(name: 'date_uploaded')
+          DateTime? dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix')
+          int? dateUploadedUnix});
 }
 
 /// @nodoc
-class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
-    implements _$$_MovieCopyWith<$Res> {
-  __$$_MovieCopyWithImpl(_$_Movie _value, $Res Function(_$_Movie) _then)
+class __$$_MovieEntityCopyWithImpl<$Res>
+    extends _$MovieEntityCopyWithImpl<$Res, _$_MovieEntity>
+    implements _$$_MovieEntityCopyWith<$Res> {
+  __$$_MovieEntityCopyWithImpl(
+      _$_MovieEntity _value, $Res Function(_$_MovieEntity) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -721,7 +390,7 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
     Object? dateUploaded = freezed,
     Object? dateUploadedUnix = freezed,
   }) {
-    return _then(_$_Movie(
+    return _then(_$_MovieEntity(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -785,11 +454,11 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
       language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as Language?,
+              as String?,
       mpaRating: freezed == mpaRating
           ? _value.mpaRating
           : mpaRating // ignore: cast_nullable_to_non_nullable
-              as MpaRating?,
+              as String?,
       backgroundImage: freezed == backgroundImage
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
@@ -813,7 +482,7 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
       state: freezed == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as Stat?,
+              as String?,
       torrents: freezed == torrents
           ? _value._torrents
           : torrents // ignore: cast_nullable_to_non_nullable
@@ -832,62 +501,73 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Movie implements _Movie {
-  const _$_Movie(
-      {this.id,
-      this.url,
-      this.imdbCode,
-      this.title,
-      this.titleEnglish,
-      this.titleLong,
-      this.slug,
-      this.year,
-      this.rating,
-      this.runtime,
-      final List<String>? genres,
-      this.summary,
-      this.descriptionFull,
-      this.synopsis,
-      this.ytTrailerCode,
-      this.language,
-      this.mpaRating,
-      this.backgroundImage,
-      this.backgroundImageOriginal,
-      this.smallCoverImage,
-      this.mediumCoverImage,
-      this.largeCoverImage,
-      this.state,
-      final List<Torrent>? torrents,
-      this.dateUploaded,
-      this.dateUploadedUnix})
+class _$_MovieEntity implements _MovieEntity {
+  const _$_MovieEntity(
+      {@JsonKey(name: 'id') this.id,
+      @JsonKey(name: 'url') this.url,
+      @JsonKey(name: 'imdb_code') this.imdbCode,
+      @JsonKey(name: 'title') this.title,
+      @JsonKey(name: 'title_english') this.titleEnglish,
+      @JsonKey(name: 'title_long') this.titleLong,
+      @JsonKey(name: 'slug') this.slug,
+      @JsonKey(name: 'year') this.year,
+      @JsonKey(name: 'rating') this.rating,
+      @JsonKey(name: 'runtime') this.runtime,
+      @JsonKey(name: 'genres') final List<String>? genres,
+      @JsonKey(name: 'summary') this.summary,
+      @JsonKey(name: 'description_full') this.descriptionFull,
+      @JsonKey(name: 'synopsis') this.synopsis,
+      @JsonKey(name: 'yt_trailer_code') this.ytTrailerCode,
+      @JsonKey(name: 'language') this.language,
+      @JsonKey(name: 'mpa_rating') this.mpaRating,
+      @JsonKey(name: 'background_image') this.backgroundImage,
+      @JsonKey(name: 'background_image_original') this.backgroundImageOriginal,
+      @JsonKey(name: 'small_cover_image') this.smallCoverImage,
+      @JsonKey(name: 'medium_cover_image') this.mediumCoverImage,
+      @JsonKey(name: 'large_cover_image') this.largeCoverImage,
+      @JsonKey(name: 'state') this.state,
+      @JsonKey(name: 'torrents') final List<Torrent>? torrents,
+      @JsonKey(name: 'date_uploaded') this.dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix') this.dateUploadedUnix})
       : _genres = genres,
         _torrents = torrents;
 
-  factory _$_Movie.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieFromJson(json);
+  factory _$_MovieEntity.fromJson(Map<String, dynamic> json) =>
+      _$$_MovieEntityFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final int? id;
   @override
+  @JsonKey(name: 'url')
   final String? url;
   @override
+  @JsonKey(name: 'imdb_code')
   final String? imdbCode;
   @override
+  @JsonKey(name: 'title')
   final String? title;
   @override
+  @JsonKey(name: 'title_english')
   final String? titleEnglish;
   @override
+  @JsonKey(name: 'title_long')
   final String? titleLong;
   @override
+  @JsonKey(name: 'slug')
   final String? slug;
   @override
+  @JsonKey(name: 'year')
   final int? year;
   @override
+  @JsonKey(name: 'rating')
   final double? rating;
   @override
+  @JsonKey(name: 'runtime')
   final int? runtime;
   final List<String>? _genres;
   @override
+  @JsonKey(name: 'genres')
   List<String>? get genres {
     final value = _genres;
     if (value == null) return null;
@@ -897,31 +577,44 @@ class _$_Movie implements _Movie {
   }
 
   @override
+  @JsonKey(name: 'summary')
   final String? summary;
   @override
+  @JsonKey(name: 'description_full')
   final String? descriptionFull;
   @override
+  @JsonKey(name: 'synopsis')
   final String? synopsis;
   @override
+  @JsonKey(name: 'yt_trailer_code')
   final String? ytTrailerCode;
   @override
-  final Language? language;
+  @JsonKey(name: 'language')
+  final String? language;
   @override
-  final MpaRating? mpaRating;
+  @JsonKey(name: 'mpa_rating')
+  final String? mpaRating;
   @override
+  @JsonKey(name: 'background_image')
   final String? backgroundImage;
   @override
+  @JsonKey(name: 'background_image_original')
   final String? backgroundImageOriginal;
   @override
+  @JsonKey(name: 'small_cover_image')
   final String? smallCoverImage;
   @override
+  @JsonKey(name: 'medium_cover_image')
   final String? mediumCoverImage;
   @override
+  @JsonKey(name: 'large_cover_image')
   final String? largeCoverImage;
   @override
-  final Stat? state;
+  @JsonKey(name: 'state')
+  final String? state;
   final List<Torrent>? _torrents;
   @override
+  @JsonKey(name: 'torrents')
   List<Torrent>? get torrents {
     final value = _torrents;
     if (value == null) return null;
@@ -931,20 +624,22 @@ class _$_Movie implements _Movie {
   }
 
   @override
+  @JsonKey(name: 'date_uploaded')
   final DateTime? dateUploaded;
   @override
+  @JsonKey(name: 'date_uploaded_unix')
   final int? dateUploadedUnix;
 
   @override
   String toString() {
-    return 'Movie(id: $id, url: $url, imdbCode: $imdbCode, title: $title, titleEnglish: $titleEnglish, titleLong: $titleLong, slug: $slug, year: $year, rating: $rating, runtime: $runtime, genres: $genres, summary: $summary, descriptionFull: $descriptionFull, synopsis: $synopsis, ytTrailerCode: $ytTrailerCode, language: $language, mpaRating: $mpaRating, backgroundImage: $backgroundImage, backgroundImageOriginal: $backgroundImageOriginal, smallCoverImage: $smallCoverImage, mediumCoverImage: $mediumCoverImage, largeCoverImage: $largeCoverImage, state: $state, torrents: $torrents, dateUploaded: $dateUploaded, dateUploadedUnix: $dateUploadedUnix)';
+    return 'MovieEntity(id: $id, url: $url, imdbCode: $imdbCode, title: $title, titleEnglish: $titleEnglish, titleLong: $titleLong, slug: $slug, year: $year, rating: $rating, runtime: $runtime, genres: $genres, summary: $summary, descriptionFull: $descriptionFull, synopsis: $synopsis, ytTrailerCode: $ytTrailerCode, language: $language, mpaRating: $mpaRating, backgroundImage: $backgroundImage, backgroundImageOriginal: $backgroundImageOriginal, smallCoverImage: $smallCoverImage, mediumCoverImage: $mediumCoverImage, largeCoverImage: $largeCoverImage, state: $state, torrents: $torrents, dateUploaded: $dateUploaded, dateUploadedUnix: $dateUploadedUnix)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Movie &&
+            other is _$_MovieEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.imdbCode, imdbCode) ||
@@ -1024,103 +719,156 @@ class _$_Movie implements _Movie {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieCopyWith<_$_Movie> get copyWith =>
-      __$$_MovieCopyWithImpl<_$_Movie>(this, _$identity);
+  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
+      __$$_MovieEntityCopyWithImpl<_$_MovieEntity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieToJson(
+    return _$$_MovieEntityToJson(
       this,
     );
   }
 }
 
-abstract class _Movie implements Movie {
-  const factory _Movie(
-      {final int? id,
-      final String? url,
-      final String? imdbCode,
-      final String? title,
-      final String? titleEnglish,
-      final String? titleLong,
-      final String? slug,
-      final int? year,
-      final double? rating,
-      final int? runtime,
-      final List<String>? genres,
-      final String? summary,
-      final String? descriptionFull,
-      final String? synopsis,
-      final String? ytTrailerCode,
-      final Language? language,
-      final MpaRating? mpaRating,
-      final String? backgroundImage,
-      final String? backgroundImageOriginal,
-      final String? smallCoverImage,
-      final String? mediumCoverImage,
-      final String? largeCoverImage,
-      final Stat? state,
-      final List<Torrent>? torrents,
-      final DateTime? dateUploaded,
-      final int? dateUploadedUnix}) = _$_Movie;
+abstract class _MovieEntity implements MovieEntity {
+  const factory _MovieEntity(
+      {@JsonKey(name: 'id')
+          final int? id,
+      @JsonKey(name: 'url')
+          final String? url,
+      @JsonKey(name: 'imdb_code')
+          final String? imdbCode,
+      @JsonKey(name: 'title')
+          final String? title,
+      @JsonKey(name: 'title_english')
+          final String? titleEnglish,
+      @JsonKey(name: 'title_long')
+          final String? titleLong,
+      @JsonKey(name: 'slug')
+          final String? slug,
+      @JsonKey(name: 'year')
+          final int? year,
+      @JsonKey(name: 'rating')
+          final double? rating,
+      @JsonKey(name: 'runtime')
+          final int? runtime,
+      @JsonKey(name: 'genres')
+          final List<String>? genres,
+      @JsonKey(name: 'summary')
+          final String? summary,
+      @JsonKey(name: 'description_full')
+          final String? descriptionFull,
+      @JsonKey(name: 'synopsis')
+          final String? synopsis,
+      @JsonKey(name: 'yt_trailer_code')
+          final String? ytTrailerCode,
+      @JsonKey(name: 'language')
+          final String? language,
+      @JsonKey(name: 'mpa_rating')
+          final String? mpaRating,
+      @JsonKey(name: 'background_image')
+          final String? backgroundImage,
+      @JsonKey(name: 'background_image_original')
+          final String? backgroundImageOriginal,
+      @JsonKey(name: 'small_cover_image')
+          final String? smallCoverImage,
+      @JsonKey(name: 'medium_cover_image')
+          final String? mediumCoverImage,
+      @JsonKey(name: 'large_cover_image')
+          final String? largeCoverImage,
+      @JsonKey(name: 'state')
+          final String? state,
+      @JsonKey(name: 'torrents')
+          final List<Torrent>? torrents,
+      @JsonKey(name: 'date_uploaded')
+          final DateTime? dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix')
+          final int? dateUploadedUnix}) = _$_MovieEntity;
 
-  factory _Movie.fromJson(Map<String, dynamic> json) = _$_Movie.fromJson;
+  factory _MovieEntity.fromJson(Map<String, dynamic> json) =
+      _$_MovieEntity.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int? get id;
   @override
+  @JsonKey(name: 'url')
   String? get url;
   @override
+  @JsonKey(name: 'imdb_code')
   String? get imdbCode;
   @override
+  @JsonKey(name: 'title')
   String? get title;
   @override
+  @JsonKey(name: 'title_english')
   String? get titleEnglish;
   @override
+  @JsonKey(name: 'title_long')
   String? get titleLong;
   @override
+  @JsonKey(name: 'slug')
   String? get slug;
   @override
+  @JsonKey(name: 'year')
   int? get year;
   @override
+  @JsonKey(name: 'rating')
   double? get rating;
   @override
+  @JsonKey(name: 'runtime')
   int? get runtime;
   @override
+  @JsonKey(name: 'genres')
   List<String>? get genres;
   @override
+  @JsonKey(name: 'summary')
   String? get summary;
   @override
+  @JsonKey(name: 'description_full')
   String? get descriptionFull;
   @override
+  @JsonKey(name: 'synopsis')
   String? get synopsis;
   @override
+  @JsonKey(name: 'yt_trailer_code')
   String? get ytTrailerCode;
   @override
-  Language? get language;
+  @JsonKey(name: 'language')
+  String? get language;
   @override
-  MpaRating? get mpaRating;
+  @JsonKey(name: 'mpa_rating')
+  String? get mpaRating;
   @override
+  @JsonKey(name: 'background_image')
   String? get backgroundImage;
   @override
+  @JsonKey(name: 'background_image_original')
   String? get backgroundImageOriginal;
   @override
+  @JsonKey(name: 'small_cover_image')
   String? get smallCoverImage;
   @override
+  @JsonKey(name: 'medium_cover_image')
   String? get mediumCoverImage;
   @override
+  @JsonKey(name: 'large_cover_image')
   String? get largeCoverImage;
   @override
-  Stat? get state;
+  @JsonKey(name: 'state')
+  String? get state;
   @override
+  @JsonKey(name: 'torrents')
   List<Torrent>? get torrents;
   @override
+  @JsonKey(name: 'date_uploaded')
   DateTime? get dateUploaded;
   @override
+  @JsonKey(name: 'date_uploaded_unix')
   int? get dateUploadedUnix;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieCopyWith<_$_Movie> get copyWith =>
+  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1130,15 +878,25 @@ Torrent _$TorrentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Torrent {
+  @JsonKey(name: 'url')
   String? get url => throw _privateConstructorUsedError;
+  @JsonKey(name: 'hash')
   String? get hash => throw _privateConstructorUsedError;
-  Quality? get quality => throw _privateConstructorUsedError;
-  Type? get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'quality')
+  String? get quality => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
+  String? get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'seeds')
   int? get seeds => throw _privateConstructorUsedError;
+  @JsonKey(name: 'peers')
   int? get peers => throw _privateConstructorUsedError;
+  @JsonKey(name: 'size')
   String? get size => throw _privateConstructorUsedError;
+  @JsonKey(name: 'size_bytes')
   int? get sizeBytes => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_uploaded')
   DateTime? get dateUploaded => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_uploaded_unix')
   int? get dateUploadedUnix => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1152,16 +910,16 @@ abstract class $TorrentCopyWith<$Res> {
       _$TorrentCopyWithImpl<$Res, Torrent>;
   @useResult
   $Res call(
-      {String? url,
-      String? hash,
-      Quality? quality,
-      Type? type,
-      int? seeds,
-      int? peers,
-      String? size,
-      int? sizeBytes,
-      DateTime? dateUploaded,
-      int? dateUploadedUnix});
+      {@JsonKey(name: 'url') String? url,
+      @JsonKey(name: 'hash') String? hash,
+      @JsonKey(name: 'quality') String? quality,
+      @JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'seeds') int? seeds,
+      @JsonKey(name: 'peers') int? peers,
+      @JsonKey(name: 'size') String? size,
+      @JsonKey(name: 'size_bytes') int? sizeBytes,
+      @JsonKey(name: 'date_uploaded') DateTime? dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix') int? dateUploadedUnix});
 }
 
 /// @nodoc
@@ -1200,11 +958,11 @@ class _$TorrentCopyWithImpl<$Res, $Val extends Torrent>
       quality: freezed == quality
           ? _value.quality
           : quality // ignore: cast_nullable_to_non_nullable
-              as Quality?,
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as Type?,
+              as String?,
       seeds: freezed == seeds
           ? _value.seeds
           : seeds // ignore: cast_nullable_to_non_nullable
@@ -1241,16 +999,16 @@ abstract class _$$_TorrentCopyWith<$Res> implements $TorrentCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? url,
-      String? hash,
-      Quality? quality,
-      Type? type,
-      int? seeds,
-      int? peers,
-      String? size,
-      int? sizeBytes,
-      DateTime? dateUploaded,
-      int? dateUploadedUnix});
+      {@JsonKey(name: 'url') String? url,
+      @JsonKey(name: 'hash') String? hash,
+      @JsonKey(name: 'quality') String? quality,
+      @JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'seeds') int? seeds,
+      @JsonKey(name: 'peers') int? peers,
+      @JsonKey(name: 'size') String? size,
+      @JsonKey(name: 'size_bytes') int? sizeBytes,
+      @JsonKey(name: 'date_uploaded') DateTime? dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix') int? dateUploadedUnix});
 }
 
 /// @nodoc
@@ -1286,11 +1044,11 @@ class __$$_TorrentCopyWithImpl<$Res>
       quality: freezed == quality
           ? _value.quality
           : quality // ignore: cast_nullable_to_non_nullable
-              as Quality?,
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as Type?,
+              as String?,
       seeds: freezed == seeds
           ? _value.seeds
           : seeds // ignore: cast_nullable_to_non_nullable
@@ -1323,39 +1081,49 @@ class __$$_TorrentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Torrent implements _Torrent {
   const _$_Torrent(
-      {this.url,
-      this.hash,
-      this.quality,
-      this.type,
-      this.seeds,
-      this.peers,
-      this.size,
-      this.sizeBytes,
-      this.dateUploaded,
-      this.dateUploadedUnix});
+      {@JsonKey(name: 'url') this.url,
+      @JsonKey(name: 'hash') this.hash,
+      @JsonKey(name: 'quality') this.quality,
+      @JsonKey(name: 'type') this.type,
+      @JsonKey(name: 'seeds') this.seeds,
+      @JsonKey(name: 'peers') this.peers,
+      @JsonKey(name: 'size') this.size,
+      @JsonKey(name: 'size_bytes') this.sizeBytes,
+      @JsonKey(name: 'date_uploaded') this.dateUploaded,
+      @JsonKey(name: 'date_uploaded_unix') this.dateUploadedUnix});
 
   factory _$_Torrent.fromJson(Map<String, dynamic> json) =>
       _$$_TorrentFromJson(json);
 
   @override
+  @JsonKey(name: 'url')
   final String? url;
   @override
+  @JsonKey(name: 'hash')
   final String? hash;
   @override
-  final Quality? quality;
+  @JsonKey(name: 'quality')
+  final String? quality;
   @override
-  final Type? type;
+  @JsonKey(name: 'type')
+  final String? type;
   @override
+  @JsonKey(name: 'seeds')
   final int? seeds;
   @override
+  @JsonKey(name: 'peers')
   final int? peers;
   @override
+  @JsonKey(name: 'size')
   final String? size;
   @override
+  @JsonKey(name: 'size_bytes')
   final int? sizeBytes;
   @override
+  @JsonKey(name: 'date_uploaded')
   final DateTime? dateUploaded;
   @override
+  @JsonKey(name: 'date_uploaded_unix')
   final int? dateUploadedUnix;
 
   @override
@@ -1404,237 +1172,52 @@ class _$_Torrent implements _Torrent {
 
 abstract class _Torrent implements Torrent {
   const factory _Torrent(
-      {final String? url,
-      final String? hash,
-      final Quality? quality,
-      final Type? type,
-      final int? seeds,
-      final int? peers,
-      final String? size,
-      final int? sizeBytes,
-      final DateTime? dateUploaded,
-      final int? dateUploadedUnix}) = _$_Torrent;
+          {@JsonKey(name: 'url') final String? url,
+          @JsonKey(name: 'hash') final String? hash,
+          @JsonKey(name: 'quality') final String? quality,
+          @JsonKey(name: 'type') final String? type,
+          @JsonKey(name: 'seeds') final int? seeds,
+          @JsonKey(name: 'peers') final int? peers,
+          @JsonKey(name: 'size') final String? size,
+          @JsonKey(name: 'size_bytes') final int? sizeBytes,
+          @JsonKey(name: 'date_uploaded') final DateTime? dateUploaded,
+          @JsonKey(name: 'date_uploaded_unix') final int? dateUploadedUnix}) =
+      _$_Torrent;
 
   factory _Torrent.fromJson(Map<String, dynamic> json) = _$_Torrent.fromJson;
 
   @override
+  @JsonKey(name: 'url')
   String? get url;
   @override
+  @JsonKey(name: 'hash')
   String? get hash;
   @override
-  Quality? get quality;
+  @JsonKey(name: 'quality')
+  String? get quality;
   @override
-  Type? get type;
+  @JsonKey(name: 'type')
+  String? get type;
   @override
+  @JsonKey(name: 'seeds')
   int? get seeds;
   @override
+  @JsonKey(name: 'peers')
   int? get peers;
   @override
+  @JsonKey(name: 'size')
   String? get size;
   @override
+  @JsonKey(name: 'size_bytes')
   int? get sizeBytes;
   @override
+  @JsonKey(name: 'date_uploaded')
   DateTime? get dateUploaded;
   @override
+  @JsonKey(name: 'date_uploaded_unix')
   int? get dateUploadedUnix;
   @override
   @JsonKey(ignore: true)
   _$$_TorrentCopyWith<_$_Torrent> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-Meta _$MetaFromJson(Map<String, dynamic> json) {
-  return _Meta.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Meta {
-  int? get serverTime => throw _privateConstructorUsedError;
-  String? get serverTimezone => throw _privateConstructorUsedError;
-  int? get apiVersion => throw _privateConstructorUsedError;
-  String? get executionTime => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MetaCopyWith<Meta> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MetaCopyWith<$Res> {
-  factory $MetaCopyWith(Meta value, $Res Function(Meta) then) =
-      _$MetaCopyWithImpl<$Res, Meta>;
-  @useResult
-  $Res call(
-      {int? serverTime,
-      String? serverTimezone,
-      int? apiVersion,
-      String? executionTime});
-}
-
-/// @nodoc
-class _$MetaCopyWithImpl<$Res, $Val extends Meta>
-    implements $MetaCopyWith<$Res> {
-  _$MetaCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? serverTime = freezed,
-    Object? serverTimezone = freezed,
-    Object? apiVersion = freezed,
-    Object? executionTime = freezed,
-  }) {
-    return _then(_value.copyWith(
-      serverTime: freezed == serverTime
-          ? _value.serverTime
-          : serverTime // ignore: cast_nullable_to_non_nullable
-              as int?,
-      serverTimezone: freezed == serverTimezone
-          ? _value.serverTimezone
-          : serverTimezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      apiVersion: freezed == apiVersion
-          ? _value.apiVersion
-          : apiVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
-      executionTime: freezed == executionTime
-          ? _value.executionTime
-          : executionTime // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_MetaCopyWith<$Res> implements $MetaCopyWith<$Res> {
-  factory _$$_MetaCopyWith(_$_Meta value, $Res Function(_$_Meta) then) =
-      __$$_MetaCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int? serverTime,
-      String? serverTimezone,
-      int? apiVersion,
-      String? executionTime});
-}
-
-/// @nodoc
-class __$$_MetaCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res, _$_Meta>
-    implements _$$_MetaCopyWith<$Res> {
-  __$$_MetaCopyWithImpl(_$_Meta _value, $Res Function(_$_Meta) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? serverTime = freezed,
-    Object? serverTimezone = freezed,
-    Object? apiVersion = freezed,
-    Object? executionTime = freezed,
-  }) {
-    return _then(_$_Meta(
-      serverTime: freezed == serverTime
-          ? _value.serverTime
-          : serverTime // ignore: cast_nullable_to_non_nullable
-              as int?,
-      serverTimezone: freezed == serverTimezone
-          ? _value.serverTimezone
-          : serverTimezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      apiVersion: freezed == apiVersion
-          ? _value.apiVersion
-          : apiVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
-      executionTime: freezed == executionTime
-          ? _value.executionTime
-          : executionTime // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_Meta implements _Meta {
-  const _$_Meta(
-      {this.serverTime,
-      this.serverTimezone,
-      this.apiVersion,
-      this.executionTime});
-
-  factory _$_Meta.fromJson(Map<String, dynamic> json) => _$$_MetaFromJson(json);
-
-  @override
-  final int? serverTime;
-  @override
-  final String? serverTimezone;
-  @override
-  final int? apiVersion;
-  @override
-  final String? executionTime;
-
-  @override
-  String toString() {
-    return 'Meta(serverTime: $serverTime, serverTimezone: $serverTimezone, apiVersion: $apiVersion, executionTime: $executionTime)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Meta &&
-            (identical(other.serverTime, serverTime) ||
-                other.serverTime == serverTime) &&
-            (identical(other.serverTimezone, serverTimezone) ||
-                other.serverTimezone == serverTimezone) &&
-            (identical(other.apiVersion, apiVersion) ||
-                other.apiVersion == apiVersion) &&
-            (identical(other.executionTime, executionTime) ||
-                other.executionTime == executionTime));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, serverTime, serverTimezone, apiVersion, executionTime);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_MetaCopyWith<_$_Meta> get copyWith =>
-      __$$_MetaCopyWithImpl<_$_Meta>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MetaToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Meta implements Meta {
-  const factory _Meta(
-      {final int? serverTime,
-      final String? serverTimezone,
-      final int? apiVersion,
-      final String? executionTime}) = _$_Meta;
-
-  factory _Meta.fromJson(Map<String, dynamic> json) = _$_Meta.fromJson;
-
-  @override
-  int? get serverTime;
-  @override
-  String? get serverTimezone;
-  @override
-  int? get apiVersion;
-  @override
-  String? get executionTime;
-  @override
-  @JsonKey(ignore: true)
-  _$$_MetaCopyWith<_$_Meta> get copyWith => throw _privateConstructorUsedError;
 }

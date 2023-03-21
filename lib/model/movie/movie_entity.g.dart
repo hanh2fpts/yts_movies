@@ -8,51 +8,12 @@ part of 'movie_entity.dart';
 
 _$_MovieEntity _$$_MovieEntityFromJson(Map<String, dynamic> json) =>
     _$_MovieEntity(
-      status: $enumDecodeNullable(_$StatEnumMap, json['status']),
-      statusMessage: json['statusMessage'] as String?,
-      data: json['data'] == null
-          ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
-      meta: json['meta'] == null
-          ? null
-          : Meta.fromJson(json['meta'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_MovieEntityToJson(_$_MovieEntity instance) =>
-    <String, dynamic>{
-      'status': _$StatEnumMap[instance.status],
-      'statusMessage': instance.statusMessage,
-      'data': instance.data,
-      'meta': instance.meta,
-    };
-
-const _$StatEnumMap = {
-  Stat.OK: 'OK',
-};
-
-_$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
-      movieCount: json['movieCount'] as int?,
-      limit: json['limit'] as int?,
-      pageNumber: json['pageNumber'] as int?,
-      movies: (json['movies'] as List<dynamic>?)
-          ?.map((e) => Movie.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
-      'movieCount': instance.movieCount,
-      'limit': instance.limit,
-      'pageNumber': instance.pageNumber,
-      'movies': instance.movies,
-    };
-
-_$_Movie _$$_MovieFromJson(Map<String, dynamic> json) => _$_Movie(
       id: json['id'] as int?,
       url: json['url'] as String?,
-      imdbCode: json['imdbCode'] as String?,
+      imdbCode: json['imdb_code'] as String?,
       title: json['title'] as String?,
-      titleEnglish: json['titleEnglish'] as String?,
-      titleLong: json['titleLong'] as String?,
+      titleEnglish: json['title_english'] as String?,
+      titleLong: json['title_long'] as String?,
       slug: json['slug'] as String?,
       year: json['year'] as int?,
       rating: (json['rating'] as num?)?.toDouble(),
@@ -60,114 +21,81 @@ _$_Movie _$$_MovieFromJson(Map<String, dynamic> json) => _$_Movie(
       genres:
           (json['genres'] as List<dynamic>?)?.map((e) => e as String).toList(),
       summary: json['summary'] as String?,
-      descriptionFull: json['descriptionFull'] as String?,
+      descriptionFull: json['description_full'] as String?,
       synopsis: json['synopsis'] as String?,
-      ytTrailerCode: json['ytTrailerCode'] as String?,
-      language: $enumDecodeNullable(_$LanguageEnumMap, json['language']),
-      mpaRating: $enumDecodeNullable(_$MpaRatingEnumMap, json['mpaRating']),
-      backgroundImage: json['backgroundImage'] as String?,
-      backgroundImageOriginal: json['backgroundImageOriginal'] as String?,
-      smallCoverImage: json['smallCoverImage'] as String?,
-      mediumCoverImage: json['mediumCoverImage'] as String?,
-      largeCoverImage: json['largeCoverImage'] as String?,
-      state: $enumDecodeNullable(_$StatEnumMap, json['state']),
+      ytTrailerCode: json['yt_trailer_code'] as String?,
+      language: json['language'] as String?,
+      mpaRating: json['mpa_rating'] as String?,
+      backgroundImage: json['background_image'] as String?,
+      backgroundImageOriginal: json['background_image_original'] as String?,
+      smallCoverImage: json['small_cover_image'] as String?,
+      mediumCoverImage: json['medium_cover_image'] as String?,
+      largeCoverImage: json['large_cover_image'] as String?,
+      state: json['state'] as String?,
       torrents: (json['torrents'] as List<dynamic>?)
           ?.map((e) => Torrent.fromJson(e as Map<String, dynamic>))
           .toList(),
-      dateUploaded: json['dateUploaded'] == null
+      dateUploaded: json['date_uploaded'] == null
           ? null
-          : DateTime.parse(json['dateUploaded'] as String),
-      dateUploadedUnix: json['dateUploadedUnix'] as int?,
+          : DateTime.parse(json['date_uploaded'] as String),
+      dateUploadedUnix: json['date_uploaded_unix'] as int?,
     );
 
-Map<String, dynamic> _$$_MovieToJson(_$_Movie instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MovieEntityToJson(_$_MovieEntity instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'url': instance.url,
-      'imdbCode': instance.imdbCode,
+      'imdb_code': instance.imdbCode,
       'title': instance.title,
-      'titleEnglish': instance.titleEnglish,
-      'titleLong': instance.titleLong,
+      'title_english': instance.titleEnglish,
+      'title_long': instance.titleLong,
       'slug': instance.slug,
       'year': instance.year,
       'rating': instance.rating,
       'runtime': instance.runtime,
       'genres': instance.genres,
       'summary': instance.summary,
-      'descriptionFull': instance.descriptionFull,
+      'description_full': instance.descriptionFull,
       'synopsis': instance.synopsis,
-      'ytTrailerCode': instance.ytTrailerCode,
-      'language': _$LanguageEnumMap[instance.language],
-      'mpaRating': _$MpaRatingEnumMap[instance.mpaRating],
-      'backgroundImage': instance.backgroundImage,
-      'backgroundImageOriginal': instance.backgroundImageOriginal,
-      'smallCoverImage': instance.smallCoverImage,
-      'mediumCoverImage': instance.mediumCoverImage,
-      'largeCoverImage': instance.largeCoverImage,
-      'state': _$StatEnumMap[instance.state],
+      'yt_trailer_code': instance.ytTrailerCode,
+      'language': instance.language,
+      'mpa_rating': instance.mpaRating,
+      'background_image': instance.backgroundImage,
+      'background_image_original': instance.backgroundImageOriginal,
+      'small_cover_image': instance.smallCoverImage,
+      'medium_cover_image': instance.mediumCoverImage,
+      'large_cover_image': instance.largeCoverImage,
+      'state': instance.state,
       'torrents': instance.torrents,
-      'dateUploaded': instance.dateUploaded?.toIso8601String(),
-      'dateUploadedUnix': instance.dateUploadedUnix,
+      'date_uploaded': instance.dateUploaded?.toIso8601String(),
+      'date_uploaded_unix': instance.dateUploadedUnix,
     };
-
-const _$LanguageEnumMap = {
-  Language.EN: 'EN',
-  Language.FR: 'FR',
-};
-
-const _$MpaRatingEnumMap = {
-  MpaRating.R: 'R',
-  MpaRating.EMPTY: 'EMPTY',
-};
 
 _$_Torrent _$$_TorrentFromJson(Map<String, dynamic> json) => _$_Torrent(
       url: json['url'] as String?,
       hash: json['hash'] as String?,
-      quality: $enumDecodeNullable(_$QualityEnumMap, json['quality']),
-      type: $enumDecodeNullable(_$TypeEnumMap, json['type']),
+      quality: json['quality'] as String?,
+      type: json['type'] as String?,
       seeds: json['seeds'] as int?,
       peers: json['peers'] as int?,
       size: json['size'] as String?,
-      sizeBytes: json['sizeBytes'] as int?,
-      dateUploaded: json['dateUploaded'] == null
+      sizeBytes: json['size_bytes'] as int?,
+      dateUploaded: json['date_uploaded'] == null
           ? null
-          : DateTime.parse(json['dateUploaded'] as String),
-      dateUploadedUnix: json['dateUploadedUnix'] as int?,
+          : DateTime.parse(json['date_uploaded'] as String),
+      dateUploadedUnix: json['date_uploaded_unix'] as int?,
     );
 
 Map<String, dynamic> _$$_TorrentToJson(_$_Torrent instance) =>
     <String, dynamic>{
       'url': instance.url,
       'hash': instance.hash,
-      'quality': _$QualityEnumMap[instance.quality],
-      'type': _$TypeEnumMap[instance.type],
+      'quality': instance.quality,
+      'type': instance.type,
       'seeds': instance.seeds,
       'peers': instance.peers,
       'size': instance.size,
-      'sizeBytes': instance.sizeBytes,
-      'dateUploaded': instance.dateUploaded?.toIso8601String(),
-      'dateUploadedUnix': instance.dateUploadedUnix,
-    };
-
-const _$QualityEnumMap = {
-  Quality.THE_720_P: 'THE_720_P',
-  Quality.THE_1080_P: 'THE_1080_P',
-};
-
-const _$TypeEnumMap = {
-  Type.WEB: 'WEB',
-  Type.BLURAY: 'BLURAY',
-};
-
-_$_Meta _$$_MetaFromJson(Map<String, dynamic> json) => _$_Meta(
-      serverTime: json['serverTime'] as int?,
-      serverTimezone: json['serverTimezone'] as String?,
-      apiVersion: json['apiVersion'] as int?,
-      executionTime: json['executionTime'] as String?,
-    );
-
-Map<String, dynamic> _$$_MetaToJson(_$_Meta instance) => <String, dynamic>{
-      'serverTime': instance.serverTime,
-      'serverTimezone': instance.serverTimezone,
-      'apiVersion': instance.apiVersion,
-      'executionTime': instance.executionTime,
+      'size_bytes': instance.sizeBytes,
+      'date_uploaded': instance.dateUploaded?.toIso8601String(),
+      'date_uploaded_unix': instance.dateUploadedUnix,
     };
