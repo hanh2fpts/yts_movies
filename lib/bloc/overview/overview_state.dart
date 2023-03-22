@@ -5,7 +5,7 @@ abstract class OverviewState {}
 class OverviewInitial extends OverviewState {}
 
 class InitDataSuccess extends OverviewState {
-  final List<MovieEntity> listMovie;
+  final List<Movie> listMovie;
 
   InitDataSuccess({required this.listMovie});
 }

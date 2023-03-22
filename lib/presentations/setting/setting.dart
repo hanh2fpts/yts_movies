@@ -16,7 +16,7 @@ class Setting extends StatelessWidget {
           child: Column(
               children: [
             const Text('Xin chào, Chúc bạn một ngày tốt lành!',
-                style: TextStyle(fontSize: 30, color: Colors.white)),
+                style: TextStyle(fontSize: 30)),
             const SizedBox(height: 20),
             CircleAvatar(
                 radius: 80,

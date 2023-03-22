@@ -8,6 +8,23 @@ part of 'movie_entity.dart';
 
 _$_MovieEntity _$$_MovieEntityFromJson(Map<String, dynamic> json) =>
     _$_MovieEntity(
+      movieCount: json['movie_count'] as int?,
+      limit: json['limit'] as int?,
+      pageNumber: json['page_number'] as int?,
+      movies: (json['movies'] as List<dynamic>?)
+          ?.map((e) => Movie.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_MovieEntityToJson(_$_MovieEntity instance) =>
+    <String, dynamic>{
+      'movie_count': instance.movieCount,
+      'limit': instance.limit,
+      'page_number': instance.pageNumber,
+      'movies': instance.movies,
+    };
+
+_$_Movie _$$_MovieFromJson(Map<String, dynamic> json) => _$_Movie(
       id: json['id'] as int?,
       url: json['url'] as String?,
       imdbCode: json['imdb_code'] as String?,
@@ -41,8 +58,7 @@ _$_MovieEntity _$$_MovieEntityFromJson(Map<String, dynamic> json) =>
       dateUploadedUnix: json['date_uploaded_unix'] as int?,
     );
 
-Map<String, dynamic> _$$_MovieEntityToJson(_$_MovieEntity instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_MovieToJson(_$_Movie instance) => <String, dynamic>{
       'id': instance.id,
       'url': instance.url,
       'imdb_code': instance.imdbCode,

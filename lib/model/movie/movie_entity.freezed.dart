@@ -20,6 +20,229 @@ MovieEntity _$MovieEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieEntity {
+  @JsonKey(name: 'movie_count')
+  int? get movieCount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'limit')
+  int? get limit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'page_number')
+  int? get pageNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'movies')
+  List<Movie>? get movies => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MovieEntityCopyWith<MovieEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MovieEntityCopyWith<$Res> {
+  factory $MovieEntityCopyWith(
+          MovieEntity value, $Res Function(MovieEntity) then) =
+      _$MovieEntityCopyWithImpl<$Res, MovieEntity>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'movie_count') int? movieCount,
+      @JsonKey(name: 'limit') int? limit,
+      @JsonKey(name: 'page_number') int? pageNumber,
+      @JsonKey(name: 'movies') List<Movie>? movies});
+}
+
+/// @nodoc
+class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
+    implements $MovieEntityCopyWith<$Res> {
+  _$MovieEntityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movieCount = freezed,
+    Object? limit = freezed,
+    Object? pageNumber = freezed,
+    Object? movies = freezed,
+  }) {
+    return _then(_value.copyWith(
+      movieCount: freezed == movieCount
+          ? _value.movieCount
+          : movieCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      pageNumber: freezed == pageNumber
+          ? _value.pageNumber
+          : pageNumber // ignore: cast_nullable_to_non_nullable
+              as int?,
+      movies: freezed == movies
+          ? _value.movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_MovieEntityCopyWith<$Res>
+    implements $MovieEntityCopyWith<$Res> {
+  factory _$$_MovieEntityCopyWith(
+          _$_MovieEntity value, $Res Function(_$_MovieEntity) then) =
+      __$$_MovieEntityCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'movie_count') int? movieCount,
+      @JsonKey(name: 'limit') int? limit,
+      @JsonKey(name: 'page_number') int? pageNumber,
+      @JsonKey(name: 'movies') List<Movie>? movies});
+}
+
+/// @nodoc
+class __$$_MovieEntityCopyWithImpl<$Res>
+    extends _$MovieEntityCopyWithImpl<$Res, _$_MovieEntity>
+    implements _$$_MovieEntityCopyWith<$Res> {
+  __$$_MovieEntityCopyWithImpl(
+      _$_MovieEntity _value, $Res Function(_$_MovieEntity) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movieCount = freezed,
+    Object? limit = freezed,
+    Object? pageNumber = freezed,
+    Object? movies = freezed,
+  }) {
+    return _then(_$_MovieEntity(
+      movieCount: freezed == movieCount
+          ? _value.movieCount
+          : movieCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      pageNumber: freezed == pageNumber
+          ? _value.pageNumber
+          : pageNumber // ignore: cast_nullable_to_non_nullable
+              as int?,
+      movies: freezed == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_MovieEntity implements _MovieEntity {
+  const _$_MovieEntity(
+      {@JsonKey(name: 'movie_count') this.movieCount,
+      @JsonKey(name: 'limit') this.limit,
+      @JsonKey(name: 'page_number') this.pageNumber,
+      @JsonKey(name: 'movies') final List<Movie>? movies})
+      : _movies = movies;
+
+  factory _$_MovieEntity.fromJson(Map<String, dynamic> json) =>
+      _$$_MovieEntityFromJson(json);
+
+  @override
+  @JsonKey(name: 'movie_count')
+  final int? movieCount;
+  @override
+  @JsonKey(name: 'limit')
+  final int? limit;
+  @override
+  @JsonKey(name: 'page_number')
+  final int? pageNumber;
+  final List<Movie>? _movies;
+  @override
+  @JsonKey(name: 'movies')
+  List<Movie>? get movies {
+    final value = _movies;
+    if (value == null) return null;
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'MovieEntity(movieCount: $movieCount, limit: $limit, pageNumber: $pageNumber, movies: $movies)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MovieEntity &&
+            (identical(other.movieCount, movieCount) ||
+                other.movieCount == movieCount) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.pageNumber, pageNumber) ||
+                other.pageNumber == pageNumber) &&
+            const DeepCollectionEquality().equals(other._movies, _movies));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, movieCount, limit, pageNumber,
+      const DeepCollectionEquality().hash(_movies));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
+      __$$_MovieEntityCopyWithImpl<_$_MovieEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MovieEntityToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MovieEntity implements MovieEntity {
+  const factory _MovieEntity(
+      {@JsonKey(name: 'movie_count') final int? movieCount,
+      @JsonKey(name: 'limit') final int? limit,
+      @JsonKey(name: 'page_number') final int? pageNumber,
+      @JsonKey(name: 'movies') final List<Movie>? movies}) = _$_MovieEntity;
+
+  factory _MovieEntity.fromJson(Map<String, dynamic> json) =
+      _$_MovieEntity.fromJson;
+
+  @override
+  @JsonKey(name: 'movie_count')
+  int? get movieCount;
+  @override
+  @JsonKey(name: 'limit')
+  int? get limit;
+  @override
+  @JsonKey(name: 'page_number')
+  int? get pageNumber;
+  @override
+  @JsonKey(name: 'movies')
+  List<Movie>? get movies;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Movie _$MovieFromJson(Map<String, dynamic> json) {
+  return _Movie.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Movie {
   @JsonKey(name: 'id')
   int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'url')
@@ -75,15 +298,13 @@ mixin _$MovieEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieEntityCopyWith<MovieEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MovieCopyWith<Movie> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MovieEntityCopyWith<$Res> {
-  factory $MovieEntityCopyWith(
-          MovieEntity value, $Res Function(MovieEntity) then) =
-      _$MovieEntityCopyWithImpl<$Res, MovieEntity>;
+abstract class $MovieCopyWith<$Res> {
+  factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
+      _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id')
@@ -141,9 +362,9 @@ abstract class $MovieEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
-    implements $MovieEntityCopyWith<$Res> {
-  _$MovieEntityCopyWithImpl(this._value, this._then);
+class _$MovieCopyWithImpl<$Res, $Val extends Movie>
+    implements $MovieCopyWith<$Res> {
+  _$MovieCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -290,11 +511,9 @@ class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
 }
 
 /// @nodoc
-abstract class _$$_MovieEntityCopyWith<$Res>
-    implements $MovieEntityCopyWith<$Res> {
-  factory _$$_MovieEntityCopyWith(
-          _$_MovieEntity value, $Res Function(_$_MovieEntity) then) =
-      __$$_MovieEntityCopyWithImpl<$Res>;
+abstract class _$$_MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
+  factory _$$_MovieCopyWith(_$_Movie value, $Res Function(_$_Movie) then) =
+      __$$_MovieCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -353,11 +572,9 @@ abstract class _$$_MovieEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MovieEntityCopyWithImpl<$Res>
-    extends _$MovieEntityCopyWithImpl<$Res, _$_MovieEntity>
-    implements _$$_MovieEntityCopyWith<$Res> {
-  __$$_MovieEntityCopyWithImpl(
-      _$_MovieEntity _value, $Res Function(_$_MovieEntity) _then)
+class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
+    implements _$$_MovieCopyWith<$Res> {
+  __$$_MovieCopyWithImpl(_$_Movie _value, $Res Function(_$_Movie) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -390,7 +607,7 @@ class __$$_MovieEntityCopyWithImpl<$Res>
     Object? dateUploaded = freezed,
     Object? dateUploadedUnix = freezed,
   }) {
-    return _then(_$_MovieEntity(
+    return _then(_$_Movie(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -501,8 +718,8 @@ class __$$_MovieEntityCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MovieEntity implements _MovieEntity {
-  const _$_MovieEntity(
+class _$_Movie implements _Movie {
+  const _$_Movie(
       {@JsonKey(name: 'id') this.id,
       @JsonKey(name: 'url') this.url,
       @JsonKey(name: 'imdb_code') this.imdbCode,
@@ -532,8 +749,8 @@ class _$_MovieEntity implements _MovieEntity {
       : _genres = genres,
         _torrents = torrents;
 
-  factory _$_MovieEntity.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieEntityFromJson(json);
+  factory _$_Movie.fromJson(Map<String, dynamic> json) =>
+      _$$_MovieFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -632,14 +849,14 @@ class _$_MovieEntity implements _MovieEntity {
 
   @override
   String toString() {
-    return 'MovieEntity(id: $id, url: $url, imdbCode: $imdbCode, title: $title, titleEnglish: $titleEnglish, titleLong: $titleLong, slug: $slug, year: $year, rating: $rating, runtime: $runtime, genres: $genres, summary: $summary, descriptionFull: $descriptionFull, synopsis: $synopsis, ytTrailerCode: $ytTrailerCode, language: $language, mpaRating: $mpaRating, backgroundImage: $backgroundImage, backgroundImageOriginal: $backgroundImageOriginal, smallCoverImage: $smallCoverImage, mediumCoverImage: $mediumCoverImage, largeCoverImage: $largeCoverImage, state: $state, torrents: $torrents, dateUploaded: $dateUploaded, dateUploadedUnix: $dateUploadedUnix)';
+    return 'Movie(id: $id, url: $url, imdbCode: $imdbCode, title: $title, titleEnglish: $titleEnglish, titleLong: $titleLong, slug: $slug, year: $year, rating: $rating, runtime: $runtime, genres: $genres, summary: $summary, descriptionFull: $descriptionFull, synopsis: $synopsis, ytTrailerCode: $ytTrailerCode, language: $language, mpaRating: $mpaRating, backgroundImage: $backgroundImage, backgroundImageOriginal: $backgroundImageOriginal, smallCoverImage: $smallCoverImage, mediumCoverImage: $mediumCoverImage, largeCoverImage: $largeCoverImage, state: $state, torrents: $torrents, dateUploaded: $dateUploaded, dateUploadedUnix: $dateUploadedUnix)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovieEntity &&
+            other is _$_Movie &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.imdbCode, imdbCode) ||
@@ -719,19 +936,19 @@ class _$_MovieEntity implements _MovieEntity {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
-      __$$_MovieEntityCopyWithImpl<_$_MovieEntity>(this, _$identity);
+  _$$_MovieCopyWith<_$_Movie> get copyWith =>
+      __$$_MovieCopyWithImpl<_$_Movie>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieEntityToJson(
+    return _$$_MovieToJson(
       this,
     );
   }
 }
 
-abstract class _MovieEntity implements MovieEntity {
-  const factory _MovieEntity(
+abstract class _Movie implements Movie {
+  const factory _Movie(
       {@JsonKey(name: 'id')
           final int? id,
       @JsonKey(name: 'url')
@@ -783,10 +1000,9 @@ abstract class _MovieEntity implements MovieEntity {
       @JsonKey(name: 'date_uploaded')
           final DateTime? dateUploaded,
       @JsonKey(name: 'date_uploaded_unix')
-          final int? dateUploadedUnix}) = _$_MovieEntity;
+          final int? dateUploadedUnix}) = _$_Movie;
 
-  factory _MovieEntity.fromJson(Map<String, dynamic> json) =
-      _$_MovieEntity.fromJson;
+  factory _Movie.fromJson(Map<String, dynamic> json) = _$_Movie.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -868,7 +1084,7 @@ abstract class _MovieEntity implements MovieEntity {
   int? get dateUploadedUnix;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieEntityCopyWith<_$_MovieEntity> get copyWith =>
+  _$$_MovieCopyWith<_$_Movie> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

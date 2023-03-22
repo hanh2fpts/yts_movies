@@ -27,10 +27,8 @@ class ResponseDto<T> extends Equatable {
 extension ResponseConverter on ResponseDto {
   ResponseDto? decodeJson(Map<String, dynamic> json) {
     try {
-      if (this is ResponseDto<List<MovieEntity>>) {
-        var jsonList = json['data']['movies'] as List;
-        var list = List<MovieEntity>.from(jsonList.map((e) => MovieEntity.fromJsonObject(e)));
-        return ResponseDto<List<MovieEntity>>(status: json['Code'], status_message: json['Message'], data: list);
+      if (this is ResponseDto<MovieEntity>) {
+        return ResponseDto<MovieEntity>.fromJson(json, MovieEntity.fromJsonObject);
       }
     } catch (e) {
       debug.log(Exception(e).toString());

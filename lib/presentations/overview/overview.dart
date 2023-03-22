@@ -36,10 +36,9 @@ class _OverViewState extends State<OverView> {
       ),
       body: Column(
         children: [
-          const PagingWidget(),
           Expanded(
             child: BlocProvider(
-                create: (context) => OverviewBloc()..add(InitDataEvent()),
+                create: (context) => OverviewBloc()..add(InitDataEvent(pageNumber: 1)),
                 child: BlocBuilder<OverviewBloc, OverviewState>(
                   builder: (context, state) {
                     if (state is InitDataSuccess) {
@@ -68,6 +67,7 @@ class _OverViewState extends State<OverView> {
                   },
                 )),
           ),
+          const PagingWidget(),
         ],
       ),
     );

@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final welcome = welcomeFromJson(jsonString);
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'movie_entity.freezed.dart';
 part 'movie_entity.g.dart';
@@ -9,6 +5,17 @@ part 'movie_entity.g.dart';
 @freezed
 class MovieEntity with _$MovieEntity {
   const factory MovieEntity({
+    @JsonKey(name: 'movie_count')int? movieCount,
+    @JsonKey(name: 'limit')int? limit,
+    @JsonKey(name: 'page_number')int? pageNumber,
+    @JsonKey(name: 'movies')List<Movie>? movies,
+  }) = _MovieEntity;
+  factory MovieEntity.fromJson(Map<String, dynamic> json) => _$MovieEntityFromJson(json);
+  factory MovieEntity.fromJsonObject(Object? json) => _$MovieEntityFromJson(json as Map<String, dynamic>);
+}
+@freezed
+class Movie with _$Movie {
+  const factory Movie({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'url') String? url,
      @JsonKey(name: 'imdb_code')String? imdbCode,
@@ -35,10 +42,8 @@ class MovieEntity with _$MovieEntity {
      @JsonKey(name: 'torrents')List<Torrent>? torrents,
      @JsonKey(name: 'date_uploaded')DateTime? dateUploaded,
      @JsonKey(name: 'date_uploaded_unix')int? dateUploadedUnix,
-  }) = _MovieEntity;
-
-  factory MovieEntity.fromJson(Map<String, dynamic> json) => _$MovieEntityFromJson(json);
-  factory MovieEntity.fromJsonObject(Object? json) => _$MovieEntityFromJson(json as Map<String, dynamic>);
+  }) = _Movie;
+  factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
 }
 
 @freezed
@@ -55,18 +60,5 @@ class Torrent with _$Torrent {
      @JsonKey(name: 'date_uploaded')DateTime? dateUploaded,
      @JsonKey(name: 'date_uploaded_unix')int? dateUploadedUnix,
   }) = _Torrent;
-
   factory Torrent.fromJson(Map<String, dynamic> json) => _$TorrentFromJson(json);
-}
-
-class EnumValues<T> {
-  Map<String, T> map;
-  late Map<T, String> reverseMap;
-
-  EnumValues(this.map);
-
-  Map<T, String> get reverse {
-    reverseMap = map.map((k, v) => MapEntry(v, k));
-    return reverseMap;
-  }
 }
