@@ -10,3 +10,13 @@ class InitDataEvent extends OverviewEvent {
   @override
   List<Object?> get props => [ScrollIncrementType.page];
 }
+class NextPageEvent extends OverviewEvent{
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
+class PreviousPageEvent extends OverviewEvent{
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
