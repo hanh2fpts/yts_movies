@@ -4,20 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../bloc/overview/overview_bloc.dart';
 import '../../widget/movie_item_widget.dart';
 
-class HorrorMovie extends StatelessWidget {
-  const HorrorMovie({Key? key}) : super(key: key);
+class AdventureMovie extends StatelessWidget {
+  const AdventureMovie({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<OverviewBloc, OverviewState>(
       buildWhen: (previous, current) {
-        if (current is LoadHorrorMovieSuccess) {
+        if (current is LoadAdventureMovieSuccess) {
           return true;
         }
         return false;
       },
       builder: (context, state) {
-        if (state is LoadHorrorMovieSuccess) {
+        if (state is LoadAdventureMovieSuccess) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -25,7 +25,7 @@ class HorrorMovie extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text('Phim kinh dị',
+                    child: Text('Phiêu lưu - mạo hiểm',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20)),
                   ),
@@ -43,17 +43,18 @@ class HorrorMovie extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: state.listHorrorMovie.length,
+                  itemCount: state.listAdventureMovie.length,
                   itemBuilder: (context, index) {
                     return SizedBox(
                       width: 130,
                       child: MovieItemWidget(
-                        title: state.listHorrorMovie[index].title.toString(),
+                        title:
+                            state.listAdventureMovie[index].title.toString(),
                         urlImage: state
-                            .listHorrorMovie[index].mediumCoverImage
+                            .listAdventureMovie[index].mediumCoverImage
                             .toString(),
-                        year: state.listHorrorMovie[index].year!,
-                        rate: state.listHorrorMovie[index].rating!,
+                        year: state.listAdventureMovie[index].year!,
+                        rate: state.listAdventureMovie[index].rating!,
                       ),
                     );
                   },

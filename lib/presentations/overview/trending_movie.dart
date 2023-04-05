@@ -18,37 +18,49 @@ class WatchTodayWidget extends StatefulWidget {
 class _WatchTodayWidgetState extends State<WatchTodayWidget> {
   final PageController _pageController = PageController();
   final StreamController<int> _streamController = StreamController<int>();
+  int _currentPage = 0;
 
   @override
   void initState() {
     super.initState();
+    Timer.periodic(const Duration(seconds: 1), (Timer timer) {
+      if (_pageController.page!.toInt() < 20) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+      _pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeIn,
+      );
+    });
     _pageController.addListener(() {
       _streamController.add(_pageController.page!.toInt());
     });
   }
 
   @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<OverviewBloc, OverviewState>(
       buildWhen: (previous, current) {
-        if (current is LoadMovieTrendingSuccess) {
+        if (current is LoadTrendingMovieSuccess) {
           return true;
         }
         return false;
       },
       builder: (context, state) {
-        if (state is LoadMovieTrendingSuccess) {
+        if (state is LoadTrendingMovieSuccess) {
           return Column(
             children: [
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Hôm nay xem gì',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              ),
-              const SizedBox(height: 10),
               SizedBox(
-                height: 400,
+                height: MediaQuery.of(context).size.height * 2 / 3,
                 child: Stack(children: [
                   PageView(
                     controller: _pageController,
@@ -88,18 +100,15 @@ class ItemMovieTrendingWidget extends StatelessWidget {
     return Material(
       child: AspectRatio(
         aspectRatio: 16 / 9,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: CachedNetworkImage(
-            fit: BoxFit.fill,
-            height: double.infinity,
-            width: double.infinity,
-            alignment: Alignment.center,
-            imageUrl: urlImage,
-            filterQuality: FilterQuality.high,
-            errorWidget: (context, url, error) =>
-                AssetHelper.loadFromAsset('assets/icons/logo_YTS.svg'),
-          ),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          height: double.infinity,
+          width: double.infinity,
+          alignment: Alignment.center,
+          imageUrl: urlImage,
+          filterQuality: FilterQuality.high,
+          errorWidget: (context, url, error) =>
+              AssetHelper.loadFromAsset('assets/icons/logo_YTS.svg'),
         ),
       ),
     );

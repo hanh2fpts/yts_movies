@@ -8,16 +8,16 @@ class LoadDataInProcess extends OverviewState {}
 
 class LoadDataError extends OverviewState {}
 
-class LoadHotMovieSuccess extends OverviewState {
+class LoadNewestMovieSuccess extends OverviewState {
   final List<Movie> listMovie;
 
-  LoadHotMovieSuccess({required this.listMovie});
+  LoadNewestMovieSuccess({required this.listMovie});
 }
 
-class LoadMovieTrendingSuccess extends OverviewState {
+class LoadTrendingMovieSuccess extends OverviewState {
   final List<Movie> listMovieTrending;
 
-  LoadMovieTrendingSuccess({required this.listMovieTrending});
+  LoadTrendingMovieSuccess({required this.listMovieTrending});
 }
 
 class LoadDramaMovieSuccess extends OverviewState {
