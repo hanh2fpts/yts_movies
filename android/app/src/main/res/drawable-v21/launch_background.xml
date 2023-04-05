@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Modify this file to customize your launch splash screen -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <bitmap android:gravity="fill" android:src="@drawable/background"/>
+    <item android:drawable="?android:colorBackground" />
+
+    <item
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:drawable="@drawable/background"
+        android:gravity="fill">
+    </item>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:drawable="@drawable/logo_yts"
+        android:gravity="center">
     </item>
 </layer-list>

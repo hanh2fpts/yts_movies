@@ -23,9 +23,13 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
   }
 
   initData(InitDataEvent event, Emitter<OverviewState> emit) async {
-    emit(LoadDataInProcess());
     currentPage = event.pageNumber;
     listOpenedPage.add(currentPage);
+
+    /// lay movie trending
+    var movieTreding = await getIt<ListMovieRepositoryType>().getListMovie(100);
+    emit(LoadMovieTrendingSuccess(
+        listMovieTrending: movieTreding?.movies as List<Movie>));
     var data = await getIt<ListMovieRepositoryType>().getListMovie(currentPage);
     print('api tra ra noi dung cua page ${data?.pageNumber}');
     if (data != null && data.movies != null) {
