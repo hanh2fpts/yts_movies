@@ -25,11 +25,10 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
   initData(InitDataEvent event, Emitter<OverviewState> emit) async {
     currentPage = event.pageNumber;
     listOpenedPage.add(currentPage);
-
     /// lay movie trending
-    var movieTreding = await getIt<ListMovieRepositoryType>().getListMovie(100);
+    var movieTrending = await getIt<ListMovieRepositoryType>().getListMovie(100);
     emit(LoadMovieTrendingSuccess(
-        listMovieTrending: movieTreding?.movies as List<Movie>));
+        listMovieTrending: movieTrending?.movies as List<Movie>));
     var data = await getIt<ListMovieRepositoryType>().getListMovie(currentPage);
     print('api tra ra noi dung cua page ${data?.pageNumber}');
     if (data != null && data.movies != null) {
@@ -41,7 +40,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
       }
       totalPages = (data.movieCount! / 20).ceil();
       listAllMovie.add(data);
-      emit(LoadDataSuccess(listMovie: data.movies as List<Movie>));
+      emit(LoadHotMovieSuccess(listMovie: data.movies as List<Movie>));
     } else {
       emit(LoadDataError());
     }
@@ -59,7 +58,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
       } else {
         listCurrentMovie.addAll(data.movies as List<Movie>);
       }
-      emit(LoadDataSuccess(listMovie: data.movies as List<Movie>));
+      emit(LoadHotMovieSuccess(listMovie: data.movies as List<Movie>));
     } else {
       listOpenedPage.add(currentPage);
       var data =
@@ -73,7 +72,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
           listCurrentMovie.addAll(data.movies as List<Movie>);
         }
         listAllMovie.add(data);
-        emit(LoadDataSuccess(listMovie: data.movies as List<Movie>));
+        emit(LoadHotMovieSuccess(listMovie: data.movies as List<Movie>));
       } else {
         emit(LoadDataError());
       }
@@ -92,7 +91,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
       } else {
         listCurrentMovie.addAll(data.movies as List<Movie>);
       }
-      emit(LoadDataSuccess(listMovie: data.movies as List<Movie>));
+      emit(LoadHotMovieSuccess(listMovie: data.movies as List<Movie>));
     } else {
       var data =
           await getIt<ListMovieRepositoryType>().getListMovie(currentPage);
@@ -105,7 +104,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
           listCurrentMovie.addAll(data.movies as List<Movie>);
         }
         listAllMovie.add(data);
-        emit(LoadDataSuccess(listMovie: data.movies as List<Movie>));
+        emit(LoadHotMovieSuccess(listMovie: data.movies as List<Movie>));
       } else {
         emit(LoadDataError());
       }
