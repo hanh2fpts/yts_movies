@@ -26,10 +26,15 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
     currentPage = event.pageNumber;
     listOpenedPage.add(currentPage);
     /// lay movie trending
-    var movieTrending = await getIt<ListMovieRepositoryType>().getListMovie(100);
+    var movieTrending = await getIt<ListMovieRepositoryType>().getListMovie(pageNumber: 100);
     emit(LoadMovieTrendingSuccess(
         listMovieTrending: movieTrending?.movies as List<Movie>));
-    var data = await getIt<ListMovieRepositoryType>().getListMovie(currentPage);
+    /// lay movie drama
+
+    /// lấy movie adventure
+    /// lấy movie horror
+    /// lấy movie hot
+    var data = await getIt<ListMovieRepositoryType>().getListMovie(pageNumber: currentPage);
     print('api tra ra noi dung cua page ${data?.pageNumber}');
     if (data != null && data.movies != null) {
       if (listCurrentMovie.isNotEmpty) {
@@ -62,7 +67,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
     } else {
       listOpenedPage.add(currentPage);
       var data =
-          await getIt<ListMovieRepositoryType>().getListMovie(currentPage);
+          await getIt<ListMovieRepositoryType>().getListMovie(pageNumber: currentPage);
       print('api tra ra noi dung cua page ${data?.pageNumber}');
       if (data != null && data.movies != null) {
         if (listCurrentMovie.isNotEmpty) {
@@ -94,7 +99,7 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
       emit(LoadHotMovieSuccess(listMovie: data.movies as List<Movie>));
     } else {
       var data =
-          await getIt<ListMovieRepositoryType>().getListMovie(currentPage);
+          await getIt<ListMovieRepositoryType>().getListMovie(pageNumber: currentPage);
       print('api tra ra noi dung cua page ${data?.pageNumber}');
       if (data != null && data.movies != null) {
         if (listCurrentMovie.isNotEmpty) {

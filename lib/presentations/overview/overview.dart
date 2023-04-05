@@ -44,10 +44,13 @@ class _OverViewState extends State<OverView> {
                 children: const [
                   /// phan hom nay xem gi
                   WatchTodayWidget(),
-                  SizedBox(height: 10),
+                  /// drama
                   DramaMovie(),
+                  /// adventure
                   AdventureMovie(),
+                  ///horror
                   HorrorMovie(),
+                  ///hot
                   NormalMovie()
                   /// phan paging
                   //PagingWidget(),

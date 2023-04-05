@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -39,41 +38,38 @@ class _WatchTodayWidgetState extends State<WatchTodayWidget> {
       },
       builder: (context, state) {
         if (state is LoadMovieTrendingSuccess) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              children: [
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('Hôm nay xem gì',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                ),
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 400,
-                  child: Stack(children: [
-                    PageView(
-                      controller: _pageController,
-                      children: state.listMovieTrending
-                          .map((e) => ItemMovieTrendingWidget(
-                              urlImage: e.largeCoverImage.toString()))
-                          .toList(),
-                    ),
-                  ]),
-                ),
-                const SizedBox(height: 10),
-                SmoothPageIndicator(
-                  controller: _pageController,
-                  count: state.listMovieTrending.length,
-                  effect: const ExpandingDotsEffect(
-                    dotWidth: 5,
-                    dotHeight: 5,
-                    activeDotColor: ColorConstant.ytsColor,
+          return Column(
+            children: [
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text('Hôm nay xem gì',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 400,
+                child: Stack(children: [
+                  PageView(
+                    controller: _pageController,
+                    children: state.listMovieTrending
+                        .map((e) => ItemMovieTrendingWidget(
+                            urlImage: e.largeCoverImage.toString()))
+                        .toList(),
                   ),
+                ]),
+              ),
+              const SizedBox(height: 10),
+              SmoothPageIndicator(
+                controller: _pageController,
+                count: state.listMovieTrending.length,
+                effect: const ExpandingDotsEffect(
+                  dotWidth: 5,
+                  dotHeight: 5,
+                  activeDotColor: ColorConstant.ytsColor,
                 ),
-              ],
-            ),
+              ),
+            ],
           );
         }
         return const Text('');
