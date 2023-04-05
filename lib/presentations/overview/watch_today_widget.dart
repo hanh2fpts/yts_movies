@@ -8,7 +8,7 @@ class WatchTodayWidget extends StatelessWidget {
     return Material(
         child: Column(
           children: [
-            Text('Hôm nay xem gì'),
+            const Text('Hôm nay xem gì'),
             Container(color: Colors.green)
           ],
         ),
