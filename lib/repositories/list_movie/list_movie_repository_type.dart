@@ -4,7 +4,7 @@ abstract class ListMovieRepositoryType {
   /// lay list film
   Future<MovieEntity?> getListMovie(
       {int pageNumber = 1,
-      String genre = 'All',
+      String genre = '0',
       String quality = 'All',
       int minimum_rating = 0,
       String query_term = '0',

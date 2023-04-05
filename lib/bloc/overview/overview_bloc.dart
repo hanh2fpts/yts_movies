@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yts_movies/injection.dart';
+import 'package:yts_movies/model/enums/type_movie.dart';
 import 'package:yts_movies/model/movie/movie_entity.dart';
 import 'package:yts_movies/repositories/list_movie/list_movie_repository_type.dart';
 
@@ -30,7 +31,8 @@ class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
     emit(LoadMovieTrendingSuccess(
         listMovieTrending: movieTrending?.movies as List<Movie>));
     /// lay movie drama
-
+    var dramaMovie = await getIt<ListMovieRepositoryType>().getListMovie(genre: Genre.Drama.name);
+    emit(LoadDramaMovieSuccess(listDramaMovie: dramaMovie?.movies as List<Movie>));
     /// lấy movie adventure
     /// lấy movie horror
     /// lấy movie hot
