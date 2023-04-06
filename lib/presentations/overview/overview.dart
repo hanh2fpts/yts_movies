@@ -25,31 +25,33 @@ class _OverViewState extends State<OverView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: BlocProvider(
-          create: (context) =>
-              OverviewBloc()..add(InitDataEvent(pageNumber: 1)),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                /// phan trending
-                TrendingMovie(),
-                /// các thể loại
-                GenreMovie(),
-                /// drama
-                DramaMovie(),
-                /// adventure
-                AdventureMovie(),
-                ///horror
-                HorrorMovie(),
-                ///hot, moi nhat
-                NewestMovie()
-                /// phan paging
-                //PagingWidget(),
-              ],
-            ),
+      body: BlocProvider(
+        create: (context) => OverviewBloc()..add(InitDataEvent(pageNumber: 1)),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              /// phan trending
+              TrendingMovie(),
+
+              /// các thể loại
+              GenreMovie(),
+
+              /// drama
+              DramaMovie(),
+
+              /// adventure
+              AdventureMovie(),
+
+              ///horror
+              HorrorMovie(),
+
+              ///hot, moi nhat
+              NewestMovie()
+            ],
           ),
         ),
+      ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: IconButton(
@@ -61,7 +63,8 @@ class _OverViewState extends State<OverView> {
     );
   }
 }
-class MySearchDelegate extends SearchDelegate{
+
+class MySearchDelegate extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
     throw UnimplementedError();
@@ -84,5 +87,4 @@ class MySearchDelegate extends SearchDelegate{
     // TODO: implement buildSuggestions
     throw UnimplementedError();
   }
-
 }

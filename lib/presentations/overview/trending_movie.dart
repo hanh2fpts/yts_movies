@@ -57,7 +57,7 @@ class _TrendingMovieState extends State<TrendingMovie> {
   Widget build(BuildContext context) {
     return BlocBuilder<OverviewBloc, OverviewState>(
       buildWhen: (previous, current) {
-        if (current is LoadTrendingMovieSuccess) {
+        if (current is LoadTrendingMovieSuccess || current is LoadDataError) {
           return true;
         }
         return false;
@@ -90,17 +90,21 @@ class _TrendingMovieState extends State<TrendingMovie> {
               ),
             ],
           );
+        } else if (state is LoadDataError) {
+          return const Center(
+              child: Text(
+            ':( Error',
+            style: TextStyle(fontSize: 30, color: Colors.white),
+          ));
         }
-        return const Text('');
+        return const SizedBox();
       },
     );
   }
 }
 
 class ItemMovieTrendingWidget extends StatelessWidget {
-  const ItemMovieTrendingWidget(
-      {Key? key,
-      required this.urlImage})
+  const ItemMovieTrendingWidget({Key? key, required this.urlImage})
       : super(key: key);
   final String urlImage;
 
