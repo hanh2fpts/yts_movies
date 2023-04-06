@@ -8,14 +8,14 @@ import 'package:yts_movies/bloc/overview/overview_bloc.dart';
 import 'package:yts_movies/helper/asset_helper.dart';
 import 'package:yts_movies/utils/color_constant.dart';
 
-class WatchTodayWidget extends StatefulWidget {
-  const WatchTodayWidget({Key? key}) : super(key: key);
+class TrendingMovie extends StatefulWidget {
+  const TrendingMovie({Key? key}) : super(key: key);
 
   @override
-  State<WatchTodayWidget> createState() => _WatchTodayWidgetState();
+  State<TrendingMovie> createState() => _TrendingMovieState();
 }
 
-class _WatchTodayWidgetState extends State<WatchTodayWidget> {
+class _TrendingMovieState extends State<TrendingMovie> {
   final PageController _pageController = PageController();
   final StreamController<int> _streamController = StreamController<int>();
   int _currentPage = 0;
@@ -23,26 +23,33 @@ class _WatchTodayWidgetState extends State<WatchTodayWidget> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(seconds: 1), (Timer timer) {
-      if (_pageController.page!.toInt() < 20) {
+    _pageController.addListener(() {
+      _streamController.add(_pageController.page!.toInt());
+      _currentPage = _pageController.page!.toInt();
+    });
+    autoScrollView();
+  }
+
+  void autoScrollView() async {
+    await Future.delayed(const Duration(seconds: 15));
+    Timer.periodic(const Duration(seconds: 10), (Timer timer) {
+      if (_currentPage < 20) {
         _currentPage++;
       } else {
         _currentPage = 0;
       }
       _pageController.animateToPage(
         _currentPage,
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 1000),
         curve: Curves.easeIn,
       );
-    });
-    _pageController.addListener(() {
-      _streamController.add(_pageController.page!.toInt());
     });
   }
 
   @override
   void dispose() {
     _pageController.dispose();
+    _streamController.close();
     super.dispose();
   }
 
@@ -91,7 +98,9 @@ class _WatchTodayWidgetState extends State<WatchTodayWidget> {
 }
 
 class ItemMovieTrendingWidget extends StatelessWidget {
-  const ItemMovieTrendingWidget({Key? key, required this.urlImage})
+  const ItemMovieTrendingWidget(
+      {Key? key,
+      required this.urlImage})
       : super(key: key);
   final String urlImage;
 
