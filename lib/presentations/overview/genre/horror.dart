@@ -48,6 +48,7 @@ class HorrorMovie extends StatelessWidget {
                     return SizedBox(
                       width: 130,
                       child: MovieItemWidget(
+                        idMovie: state.listHorrorMovie[index].id!.toInt(),
                         title: state.listHorrorMovie[index].title.toString(),
                         urlImage: state
                             .listHorrorMovie[index].mediumCoverImage

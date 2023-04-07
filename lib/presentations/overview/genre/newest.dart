@@ -25,7 +25,8 @@ class NewestMovie extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Text('Phim lẻ mới cập nhật',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 ),
                 const Spacer(),
                 TextButton(
@@ -44,6 +45,7 @@ class NewestMovie extends StatelessWidget {
                     mainAxisSpacing: 15),
                 children: List.generate(state.listMovie.length, (index) {
                   return MovieItemWidget(
+                    idMovie: state.listMovie[index].id!.toInt(),
                     title: state.listMovie[index].title.toString(),
                     urlImage:
                         state.listMovie[index].mediumCoverImage.toString(),

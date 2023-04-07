@@ -48,6 +48,7 @@ class AdventureMovie extends StatelessWidget {
                     return SizedBox(
                       width: 130,
                       child: MovieItemWidget(
+                        idMovie: state.listAdventureMovie[index].id!.toInt(),
                         title:
                             state.listAdventureMovie[index].title.toString(),
                         urlImage: state

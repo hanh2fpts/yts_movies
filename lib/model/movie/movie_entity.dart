@@ -44,6 +44,7 @@ class Movie with _$Movie {
      @JsonKey(name: 'date_uploaded_unix')int? dateUploadedUnix,
   }) = _Movie;
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
+  factory Movie.fromJsonObject(Object? json) => _$MovieFromJson(json as Map<String, dynamic>);
 }
 
 @freezed

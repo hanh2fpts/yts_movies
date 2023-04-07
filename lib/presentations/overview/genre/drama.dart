@@ -48,6 +48,7 @@ class DramaMovie extends StatelessWidget {
                     return SizedBox(
                       width: 130,
                       child: MovieItemWidget(
+                        idMovie: state.listDramaMovie[index].id!.toInt(),
                         title: state.listDramaMovie[index].title.toString(),
                         urlImage: state.listDramaMovie[index].mediumCoverImage
                             .toString(),
