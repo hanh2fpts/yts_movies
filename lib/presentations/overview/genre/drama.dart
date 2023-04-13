@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yts_movies/presentations/widget/movie_item_widget.dart';
-
 import '../../../bloc/overview/overview_bloc.dart';
+import '../../widget/widget.dart';
 
 class DramaMovie extends StatelessWidget {
   const DramaMovie({Key? key}) : super(key: key);

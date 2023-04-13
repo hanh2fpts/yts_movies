@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yts_movies/bloc/detail_movie/detail_movie_bloc.dart';
 import 'package:yts_movies/presentations/detail_movie/banner_movie.dart';
-import 'package:yts_movies/presentations/detail_movie/tab_suggest_movie_widget.dart';
-import 'package:yts_movies/utils/color_constant.dart';
-
-import 'tab_info_widget.dart';
-
 class DetailMovie extends StatefulWidget {
   const DetailMovie({Key? key}) : super(key: key);
 
@@ -43,32 +38,7 @@ class _DetailMovieState extends State<DetailMovie>
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    BannerMovie(),
-                    Scaffold(
-                      appBar: TabBar(
-                        labelPadding: const EdgeInsets.all(15),
-                        labelColor:
-                            ColorConstant.flexSchemeDark.secondaryContainer,
-                        dividerColor:
-                            ColorConstant.flexSchemeDark.secondaryContainer,
-                        indicatorColor:
-                            ColorConstant.flexSchemeDark.secondaryContainer,
-                        unselectedLabelColor:
-                            ColorConstant.flexSchemeDark.outline,
-                        tabs: const [
-                          Text('Thông tin'),
-                          Text('Nội dung tương tự')
-                        ],
-                        controller: _tabController,
-                      ),
-                      body: TabBarView(
-                        controller: _tabController,
-                        children: const [
-                          TabInfoWidget(),
-                          TabSuggestMovieWidget()
-                        ],
-                      ),
-                    ),
+                    const BannerMovie(),
                   ],
                 ),
               );
